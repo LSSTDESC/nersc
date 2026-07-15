@@ -6,4 +6,4 @@ News & Announcements
    :reversed:
    :glob:
 
-    2026-*
+   2026-*
