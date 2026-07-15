@@ -43,6 +43,6 @@ How to Continue Work
 .. note::
                 
    When working with Rubin data outside of NERSC, please be mindful of the `Rubin Data Policy <http://ls.st/rdo-013>`__ Only data rights holders may access proprietary data and services. 
-        Data rights holders: Scientists (and students) working (or enrolled) at US or Chilean institutes, and `named members  <lsst.org/scientists/international-drh-list>`__ of the international in-kind contribution teams.
+        Data rights holders: Scientists (and students) working (or enrolled) at US or Chilean institutes, and `named members  <http://lsst.org/scientists/international-drh-list>`__ of the international in-kind contribution teams.
 
 
