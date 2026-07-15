@@ -23,11 +23,6 @@ NERSC Systems *scheduled* to be brought back to service after Noon Pacific July 
 The above means files/data on $CFS (not $SCRATCH) will be accessible and can be transferred to other sites.  We recommend using `Globus <www.globus.org>`__ with one of the NERSC Globus Collections 
 such as `NERSC DTN <https://app.globus.org/file-manager/collections/9d6d994a-6d04-11e5-ba46-22000b92c6ec/overview>`__ to move data.  You should also be able to log into one of the four Data Transfer Nodes (dtn01, dtn02, dtn03, dtn04).
 
-.. note::
-                
-   `Rubin Data Policy <ls.st/rdo-013>`__ Only data rights holders may access proprietary data and services. 
-        Data rights holders: Scientists (and students) working (or enrolled) at US or Chilean institutes, and `named members  <lsst.org/scientists/international-drh-list>`__ of the international in-kind contribution teams.
-
 Other NERSC systems that will be brought back to service after Noon Pacific July 23, 2026:
 
 * Spin where the web interface for the `DESC dataregistry <https://desc-dataregistry.lbl.gov/>`__ and the production version of `FastDB <https://fastdb.readthedocs.io/en/latest/>`__ is running 
@@ -44,3 +39,10 @@ How to Continue Work
 * If there is data at NERSC that you can work with offsite, please consider transferring that data now before the outage begins using `Globus <www.globus.org>`__ with one of the NERSC Globus Collections.  When $CFS is back up on July 23rd, data transfers to other sites will also be possible.
 
 * ALCF is offerring accounts to interested DESC members and Working Groups, see `this message <https://discovery-alliance.slack.com/archives/C2M8F9BA6/p1784143431387739>`__ on Slack.
+
+.. note::
+                
+   When working with Rubin data outside of NERSC, please be mindful of the `Rubin Data Policy <http://ls.st/rdo-013>`__ Only data rights holders may access proprietary data and services. 
+        Data rights holders: Scientists (and students) working (or enrolled) at US or Chilean institutes, and `named members  <lsst.org/scientists/international-drh-list>`__ of the international in-kind contribution teams.
+
+
