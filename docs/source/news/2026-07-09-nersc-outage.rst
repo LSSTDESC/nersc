@@ -1,7 +1,7 @@
 NERSC Power Outage July 22 - August 3, 2026
 -----------------------------------------
  
-Perlmutter will be unavailable for the duration of the outage. No jobs can be run or submitted and no interactive login.
+Perlmutter will be unavailable for the duration of the outage. No jobs can be run or submitted and no interactive login or jupyter.
 
 `NERSC's announcement <https://www.nersc.gov/users/user-news/major-power-upgrade-to-disrupt-services-july-20-august-7>`__ 
 
@@ -39,6 +39,8 @@ How to Continue Work
 * If there is data at NERSC that you can work with offsite, please consider transferring that data now before the outage begins using `Globus <http://www.globus.org>`__ with one of the NERSC Globus Collections.  When $CFS is back up on July 23rd, data transfers to other sites will also be possible.
 
 * ALCF is offerring accounts to interested DESC members and Working Groups, see `this message <https://discovery-alliance.slack.com/archives/C2M8F9BA6/p1784143431387739>`__ on Slack.
+
+* Docker images are available for a number of DESC software environments, including: desc-python-bleed, desc-stack-weekly, and desc-cosmology-env.  [details coming soon]
 
 .. note::
                 
