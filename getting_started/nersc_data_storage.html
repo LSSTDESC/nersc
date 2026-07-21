@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Where to Store Your Data at NERSC &mdash; LSSTDESC NERSC Docs 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=d7e3758a" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="nersc_references.html" />
+    <link rel="prev" title="Getting a NERSC Computing Account" href="nersc_account.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LSSTDESC NERSC Docs
+              <img src="../_static/desc_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started at NERSC</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="nersc_account.html">Getting a NERSC Computing Account</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Where to Store Your Data at NERSC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#home">$HOME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scratch">$SCRATCH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#community-file-space-cfs">Community File Space (CFS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recommendations-for-wg-space">Recommendations for WG Space</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#recommendations-for-the-shared-area">Recommendations for the Shared Area</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hpss-tape-archive">HPSS Tape Archive</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LSSTDESC NERSC Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Getting Started at NERSC</a></li>
+      <li class="breadcrumb-item active">Where to Store Your Data at NERSC</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/getting_started/nersc_data_storage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="where-to-store-your-data-at-nersc">
+<h1>Where to Store Your Data at NERSC<a class="headerlink" href="#where-to-store-your-data-at-nersc" title="Link to this heading"></a></h1>
+<p>There are a variety of filesystems available at NERSC. This short note is meant
+to provide some general guidance to help you determine where to store your data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reference: NERSC Feb 2024 Data Storage Talk</p>
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The following filesystems are available:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#home">$HOME</a></p></li>
+<li><p><a class="reference internal" href="#scratch">$SCRATCH</a></p></li>
+<li><p><a class="reference internal" href="#community-file-space-cfs">Community File Space (CFS)</a></p></li>
+<li><p><a class="reference internal" href="#recommendations-for-wg-space">Recommendations for WG Space</a></p></li>
+<li><p><a class="reference internal" href="#hpss-tape-archive">HPSS Tape Archive</a></p></li>
+</ul>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Summary of Available File Systems</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 35.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>File System</p></th>
+<th class="head"><p>Suggested Use</p></th>
+<th class="head"><p>Additional Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$HOME</span></code></p></td>
+<td><p>Limited use; shell scripts</p></td>
+<td><p>Avoid running jobs in <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>. To debug NERSC Jupyter issues see
+<code class="docutils literal notranslate"><span class="pre">$HOME/.jupyter-perlmutter.log</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$PSCRATCH</span></code></p></td>
+<td><p>Temporary performant storage for running jobs; unaccessed files are
+subject to purging after 8 weeks</p></td>
+<td><p>Consider backing up to your personal HPSS area and periodically
+refreshing <code class="docutils literal notranslate"><span class="pre">$PSCRATCH</span></code> when needed</p></td>
+</tr>
+<tr class="row-even"><td><p>WG CFS area <code class="docutils literal notranslate"><span class="pre">/global/cfs/cdirs/lsst/groups/&lt;WG&gt;</span></code></p></td>
+<td><p>Stable storage for WG projects</p></td>
+<td><p>Work with your WG to organize the directory structure. Add a README to
+inform WG members how to use the space. See
+<code class="docutils literal notranslate"><span class="pre">/global/cfs/cdirs/lsst/groups/TD</span></code> for a nice example. 10 TB quota —
+WG conveners can request more by opening a GitHub issue on <code class="docutils literal notranslate"><span class="pre">desc-help</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Shared CFS area <code class="docutils literal notranslate"><span class="pre">/global/cfs/cdirs/lsst/shared</span></code></p></td>
+<td><p>Stable storage for DESC-wide data: production catalogs and datasets of
+general interest</p></td>
+<td><p>WG data to be shared more broadly — open a GitHub issue on <code class="docutils literal notranslate"><span class="pre">desc-help</span></code>
+to request copying to shared</p></td>
+</tr>
+<tr class="row-even"><td><p>Personal HPSS (tape)</p></td>
+<td><p>Backup your files and directories</p></td>
+<td><p>Protect your data from SCRATCH purging and catastrophic failures</p></td>
+</tr>
+<tr class="row-odd"><td><p>DESC HPSS (tape)</p></td>
+<td><p>Backup important DESC data (e.g. shared CFS)</p></td>
+<td><p>Request backup of additional data via GitHub issue on <code class="docutils literal notranslate"><span class="pre">desc-help</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="home">
+<span id="id1"></span><h2>$HOME<a class="headerlink" href="#home" title="Link to this heading"></a></h2>
+<p>Each user has a <strong>40 GB</strong> home directory, preferably addressed using the
+<code class="docutils literal notranslate"><span class="pre">$HOME</span></code> environment variable. Accessible from both Perlmutter and Cori.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Going over the 40 GB quota will prevent you from running jobs or Jupyter.</p>
+</div>
+<ul class="simple">
+<li><p>Best to avoid running jobs in <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> — it is not very performant and does
+not offer much storage space.</p></li>
+<li><p><strong>Limited backup</strong> of home directories:</p>
+<ul>
+<li><p>Read-only snapshots are taken once a day and saved for a week. (Look in
+<code class="docutils literal notranslate"><span class="pre">.snapshots</span></code> under <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> or any of its subdirectories.)</p></li>
+<li><p>Monthly tape archives of <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> require contacting NERSC for recovery.</p></li>
+</ul>
+</li>
+</ul>
+<p>Be aware of these special files and directories:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">$HOME/.jupyter-perlmutter.log</span></code></dt><dd><p>Output log from Jupyter sessions.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">$HOME/.local/&lt;system&gt;/&lt;python</span> <span class="pre">module</span> <span class="pre">version&gt;</span></code></dt><dd><p>Default location for <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">--user</span></code> installs.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">--user</span></code> installs are <strong>not recommended</strong>. Those installations will
+be picked up by default not only for the Python environment you installed
+them in, but for any Python environment running the same Python version
+(e.g. py 3.9).</p>
+</div>
+</dd>
+</dl>
+</section>
+<section id="scratch">
+<span id="id2"></span><h2>$SCRATCH<a class="headerlink" href="#scratch" title="Link to this heading"></a></h2>
+<p>NERSC’s Scratch space is designed for <strong>high-performance temporary storage</strong> of
+files. It is highly recommended for running jobs.</p>
+<p>Perlmutter <code class="docutils literal notranslate"><span class="pre">$PSCRATCH</span></code> provides each DESC NERSC user <strong>20 TB</strong> of scratch
+space, accessible only from the Perlmutter machines.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Files not accessed for <strong>8 weeks will be purged</strong>. NERSC has policies
+against using cron or other means to circumvent the purge policy.</p>
+</div>
+</section>
+<section id="community-file-space-cfs">
+<span id="id3"></span><h2>Community File Space (CFS)<a class="headerlink" href="#community-file-space-cfs" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">/global/cfs/cdirs/lsst/</span></code> is stable storage for shared DESC data.</p>
+<ul class="simple">
+<li><p><strong>3.9 PB</strong> total quota for DESC</p></li>
+<li><p>7-day snapshots available if needed</p></li>
+<li><p>Each WG has a <strong>10 TB</strong> quota under their respective group directory
+<code class="docutils literal notranslate"><span class="pre">/global/cfs/cdirs/lsst/groups/&lt;WG&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shared</span></code> contains all production catalogs and other datasets of general
+interest, such as skyCatalogs, reference catalogs, truth catalogs, and data
+referred to in publications.</p></li>
+</ul>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">CFS Directory Structure</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/global/cfs/cdirs/lsst/</span></code></p></td>
+<td><p>Top-level</p></td>
+<td><p>Admin access only</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">groups/</span></code></p></td>
+<td><p>One directory for each DESC working group</p></td>
+<td><p>Writable by all DESC NERSC users</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gsharing/</span></code></p></td>
+<td><p>DESC data made publicly available via Globus</p></td>
+<td><p>Writable by desc collaboration account</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">production/</span></code></p></td>
+<td><p>Collaboration-wide data products, e.g. Data Challenges</p></td>
+<td><p>Writable by desc collaboration accounts</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">shared/</span></code></p></td>
+<td><p>All data products, catalogs, and files meant for DESC use and data used
+in publications</p></td>
+<td><p>Writable by the desc collaboration account</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">www/</span></code></p></td>
+<td><p>Web access, e.g. <a class="reference external" href="https://portal.nersc.gov/cfs/lsst/">https://portal.nersc.gov/cfs/lsst/</a></p></td>
+<td><p>Symbolic links to <code class="docutils literal notranslate"><span class="pre">groups/</span></code> or <code class="docutils literal notranslate"><span class="pre">production/</span></code> areas</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="recommendations-for-wg-space">
+<span id="id4"></span><h2>Recommendations for WG Space<a class="headerlink" href="#recommendations-for-wg-space" title="Link to this heading"></a></h2>
+<p>Location: <code class="docutils literal notranslate"><span class="pre">/global/cfs/cdirs/lsst/groups/&lt;WG&gt;</span></code></p>
+<ul class="simple">
+<li><p>Work with your WG conveners to organize this area.</p></li>
+<li><p>Consider adding a <code class="docutils literal notranslate"><span class="pre">README</span></code> to your area.</p></li>
+<li><p>Consider creating a <code class="docutils literal notranslate"><span class="pre">users/</span></code> subdirectory and allow WG members to create
+their own subdirectories named after their NERSC username.</p></li>
+<li><p>If your WG has data that should be shared with multiple DESC users, please
+open an issue on <code class="docutils literal notranslate"><span class="pre">desc-help</span></code> and request that this data be copied into the
+shared area.</p></li>
+<li><p>Each WG has a <strong>10 TB</strong> quota under their respective group directory. If your
+WG needs more than 10 TB, please open an issue on <code class="docutils literal notranslate"><span class="pre">desc-help</span></code>.</p></li>
+</ul>
+<section id="recommendations-for-the-shared-area">
+<h3>Recommendations for the Shared Area<a class="headerlink" href="#recommendations-for-the-shared-area" title="Link to this heading"></a></h3>
+<p>Location: <code class="docutils literal notranslate"><span class="pre">/global/cfs/cdirs/lsst/shared</span></code></p>
+<p>Stores data of general interest to the DESC, including all data products,
+catalogs, and data used in publications.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This area is managed by the Computing WG and is <strong>not writable</strong> by all
+members of DESC. To request data be added, or to discuss whether your data
+belongs there, please open a GitHub issue on the <code class="docutils literal notranslate"><span class="pre">desc-help</span></code> repo.</p>
+</div>
+<p>There is a dedicated <code class="docutils literal notranslate"><span class="pre">papers/</span></code> subdirectory to store data associated with
+DESC publications.</p>
+</section>
+</section>
+<section id="hpss-tape-archive">
+<span id="id5"></span><h2>HPSS Tape Archive<a class="headerlink" href="#hpss-tape-archive" title="Link to this heading"></a></h2>
+<p>Used to store files for backup and to protect your data. This is a great way to
+protect your files and recover from purging on Perlmutter SCRATCH.</p>
+<ul class="simple">
+<li><p>DESC’s HPSS AY23 allocation is <strong>2.4 PB</strong></p></li>
+<li><p>Individual users have a <strong>75 TB</strong> quota from DESC on HPSS for AY23</p></li>
+<li><p>Use the tools <code class="docutils literal notranslate"><span class="pre">htar</span></code> and <code class="docutils literal notranslate"><span class="pre">hsi</span></code> to copy into HPSS</p></li>
+<li><p>Details and examples available on Confluence</p></li>
+<li><p>The recommended <code class="docutils literal notranslate"><span class="pre">xfer</span></code> queue is free of charge</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To retrieve data from HPSS and copy it to another area at NERSC or to an
+external system, use <strong>Globus</strong> (web interface or command line). This is a
+great way to refresh data on <code class="docutils literal notranslate"><span class="pre">$PSCRATCH</span></code>.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nersc_account.html" class="btn btn-neutral float-left" title="Getting a NERSC Computing Account" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nersc_references.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, LSSTDESC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
