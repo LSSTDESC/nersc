@@ -1,11 +1,15 @@
-Welcome to LSSTDESC's NERSC Documentation
+Getting Started at NERSC 
 ======================================
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
 
-   getting_started/index
+   nersc_account
+   nersc_data_storage
+   nersc_references
+
+
 
 Indices and tables
 ==================
