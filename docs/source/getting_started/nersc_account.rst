@@ -17,7 +17,7 @@ DESC repository.
 1. If you haven't already, `apply to become a DESC Member
    <https://lsstdesc.org/pages/apply.html>`_.
 2. Visit the NERSC website:
-   https://www.nersc.gov/users/accounts/user-accounts/get-a-nersc-account/
+   https://docs.nersc.gov/accounts/
 3. Click **Create a NERSC Account form**.
 4. Click **I have a current NERSC account**.
 5. Enter your NERSC username.
@@ -48,7 +48,7 @@ Step 1 — Apply for an account at NERSC
 1. If you haven't already, `apply to become a DESC Member
    <https://lsstdesc.org/pages/apply.html>`_.
 2. Visit the NERSC website:
-   https://www.nersc.gov/users/accounts/user-accounts/get-a-nersc-account/
+   https://docs.nersc.gov/accounts/
 3. Click **Create a NERSC Account form**.
 4. Click **I need a new NERSC account**.
 5. NERSC will request your ORCiD. If you do not already have one, you will be
