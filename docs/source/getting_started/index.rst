@@ -7,6 +7,7 @@ Getting Started at NERSC
 
    nersc_account
    nersc_data_storage
+   nersc_collaboration_accounts
    nersc_references
 
 
