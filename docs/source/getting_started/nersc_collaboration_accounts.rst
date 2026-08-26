@@ -28,14 +28,11 @@ Collaboration Accounts
      - Data sharing, maintenance
      - c_desc
    * - descdm
-     - Running DDRP pipeline
+     - Running pipeline jobs
      - c_descdm
    * - descim
      - Running imSim
      - c_descim
-   * - descpho
-     - Running phoSim
-     - c_descpho
    * - descprod
      - General acct for running production jobs
      - c_descprod
@@ -84,10 +81,11 @@ directories owned by that collaboration account. When finished with
 activities requiring privileged access, just "exit" your session.
 
 - The collaboration accounts are visible through your list of Unix
-  groups on, e.g., Cori. The group name is the same as the
-  collaboration account number with a prefix of ``c_``. E.g., If you
+  groups. The group name is the same as the
+  collaboration account name with a prefix of ``c_``. E.g., If you
   are a member of the ``desc`` and ``descdm`` groups, then
   ``c_desc c_descdm`` should appear in your list of groups.
+- Please request membership to a collaboration account by posting on `#desc-nersc <https://lsstc.slack.com/messages/C2U2K05JR>`_ or via email lsst-desc-help at slac.stanford.edu
 
 Reference: https://docs.nersc.gov/accounts/collaboration_accounts/
 
@@ -104,13 +102,4 @@ and will terminate any jobs which are started on the DTNs.
 - ssh to one of the Data Transfer Nodes (DTNs) by doing: ``ssh dtn02.nersc.gov``
 - Execute: ``collabsu <collaboration account username>``
 
-  - Provide your NERSC password
-
-Suggested Use
----------------
-
-The ``desc`` collaboration account should be used when creating
-directories and files for DESC production, such as DC2. This allows
-such files to be easily shared as read-only for the bulk of DESC
-users, but provides a means via the 'desc' account, to adjust
-permissions and modify directories and files.
+  - Provide your NERSC account password
