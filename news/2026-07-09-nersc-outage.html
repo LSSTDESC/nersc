@@ -1,0 +1,144 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NERSC Power Outage July 22 - August 3, 2026 &mdash; LSSTDESC NERSC Docs 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=d7e3758a" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LSSTDESC NERSC Docs
+              <img src="../_static/desc_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started at NERSC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LSSTDESC NERSC Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">NERSC Power Outage July 22 - August 3, 2026</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/news/2026-07-09-nersc-outage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nersc-power-outage-july-22-august-3-2026">
+<h1>NERSC Power Outage July 22 - August 3, 2026<a class="headerlink" href="#nersc-power-outage-july-22-august-3-2026" title="Link to this heading"></a></h1>
+<p>Perlmutter will be unavailable for the duration of the outage. No jobs can be run or submitted and no interactive login or jupyter.</p>
+<p><a class="reference external" href="https://www.nersc.gov/users/user-news/major-power-upgrade-to-disrupt-services-july-20-august-7">NERSC’s announcement</a></p>
+<p>See the <a class="reference external" href="https://www.nersc.gov/users/status">center status page</a> for updates</p>
+<section id="impact-on-desc-resources-at-nersc">
+<h2>Impact on DESC resources at NERSC<a class="headerlink" href="#impact-on-desc-resources-at-nersc" title="Link to this heading"></a></h2>
+<p><strong>All NERSC services are scheduled to be unavailable Wednesday, July 22 through Noon Pacific Thursday, July 23, 2026</strong></p>
+<p>NERSC Systems <em>scheduled</em> to be brought back to service after Noon Pacific July 23, 2026 include:</p>
+<ul class="simple">
+<li><p>Community File System (<a class="reference external" href="https://docs.nersc.gov/filesystems/community/">CFS</a>)</p></li>
+<li><p>Data Transfer Nodes (<a class="reference external" href="https://docs.nersc.gov/systems/dtn/">DTN</a>)</p></li>
+<li><p>Tape archive (<a class="reference external" href="https://docs.nersc.gov/filesystems/#archive-hpss">HPSS</a>)</p></li>
+</ul>
+<p>The above means files/data on $CFS (not $SCRATCH) will be accessible and can be transferred to other sites.  We recommend using <a class="reference external" href="http://www.globus.org">Globus</a> with one of the NERSC Globus Collections
+such as <a class="reference external" href="https://app.globus.org/file-manager/collections/9d6d994a-6d04-11e5-ba46-22000b92c6ec/overview">NERSC DTN</a> to move data.  You should also be able to log into one of the four Data Transfer Nodes (dtn01, dtn02, dtn03, dtn04).</p>
+<p>Other NERSC systems that will be brought back to service after Noon Pacific July 23, 2026:</p>
+<ul class="simple">
+<li><p>Spin where the web interface for the <a class="reference external" href="https://desc-dataregistry.lbl.gov/">DESC dataregistry</a> and the production version of <a class="reference external" href="https://fastdb.readthedocs.io/en/latest/">FastDB</a> is running</p></li>
+<li><p>Science Portals/Gateways should be availbile once CFS is back up, i.e. <a class="reference external" href="https://portal.nersc.gov/cfs/lsst/DESC_TD_PUBLIC/LSST_DATA_SETS">DESC_TD_PUBLIC</a> and <a class="reference external" href="https://portal.nersc.gov/cfs/lsst/srv-dp1">srv-dp1</a></p></li>
+<li><p><a class="reference external" href="https://help.nersc.gov/">help.nersc.gov</a></p></li>
+</ul>
+</section>
+<section id="how-to-continue-work">
+<h2>How to Continue Work<a class="headerlink" href="#how-to-continue-work" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://rsp.lsst.io/guides/getting-started/get-an-account.html">Rubin Science Platform (RSP)</a> is available; see here for <a class="reference external" href="https://dp1.lsst.io/tutorials/index.html">RSP tutorials on DP1</a>.</p></li>
+<li><p>If there is data at NERSC that you can work with offsite, please consider transferring that data now before the outage begins using <a class="reference external" href="http://www.globus.org">Globus</a> with one of the NERSC Globus Collections.  When $CFS is back up on July 23rd, data transfers to other sites will also be possible.</p></li>
+<li><p>ALCF is offerring accounts to interested DESC members and Working Groups, see <a class="reference external" href="https://discovery-alliance.slack.com/archives/C2M8F9BA6/p1784143431387739">this message</a> on Slack.</p></li>
+<li><p>Docker images are available for a number of DESC software environments, including: desc-python-bleed, desc-stack-weekly, and desc-cosmology-env.  [details coming soon]</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>When working with Rubin data outside of NERSC, please be mindful of the <a class="reference external" href="http://ls.st/rdo-013">Rubin Data Policy</a> Only data rights holders may access proprietary data and services.</dt><dd><p>Data rights holders: Scientists (and students) working (or enrolled) at US or Chilean institutes, and <a class="reference external" href="http://lsst.org/scientists/international-drh-list">named members</a> of the international in-kind contribution teams.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, LSSTDESC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
