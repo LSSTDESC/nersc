@@ -31,7 +31,7 @@ possibly sooner.
 .. note::
 
    If you need assistance, contact
-   lsst-desc-opsi-mgmt at slac dot stanford dot edu 
+   lsst-desc-ops-mgmt at slac dot stanford dot edu 
 
 Once your account access is confirmed, proceed to **Managing a NERSC Account**
 for useful details about managing and setting up your NERSC account.
