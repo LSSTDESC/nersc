@@ -19,9 +19,9 @@ This is the simplest way to run an single pipeline task or full pipeline.  There
       --pipeline "${DRP_PIPE_DIR}/pipelines/LSSTCam/DRP.yaml#isr,calibrateImage" \
       --input LSSTCam/defaults \
       --output u/<username>/single_ccd_test \
-      --data-query "instrument='LSSTCam' and detector=94 and visit=2025122500001"
+      --data-query "instrument='LSSTCam' and detector=94 and exposure=2025122500001"
 
-Here,
+Here
 
 - ``--butler-config`` (or ``-b``) refers to the butler repository, in this
   case, we have the ``dp2`` repo as set up at NERSC.
@@ -51,6 +51,10 @@ Here,
 In addition to the `pipeline reference documentation <https://pipelines.lsst.io/modules/lsst.ctrl.mpexec/pipetask.html#pipetask>`_, command line help is
 available via ``pipetask run --help``.
 
+.. _caveat_running_at_scale:
+
+Caveat: running pipelines at scale
+----------------------------------
 Even though one could, in principle, run a full DRP pipeline on a sizeable
 dataset like DP2, using the ``pipetask`` will not scale reliably beyond a few
 (< 10) processses.  The same caveat applies for running pipeline tasks
