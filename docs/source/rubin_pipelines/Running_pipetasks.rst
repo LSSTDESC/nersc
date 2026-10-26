@@ -25,18 +25,15 @@ Here,
 
 - ``--butler-config`` (or ``-b``) refers to the butler repository, in this
   case, we have the ``dp2`` repo as set up at NERSC.
-
 - ``--pipeline`` (``-p``) refers to the pipeline definition file in yaml
   format.  The ``#isr,calibrateImage`` part indicates that the pipeline
   should only include the ``isr`` and ``calibrateImage`` tasks.
   Alternatively, if the pipeline definition has subsets of tasks
   defined, then a subset label can by used.  Absent the ``#...`` part,
   the full pipeline will be used.
-
 - ``--input`` (``-i``) identifies the input collection.  This can be a
   chained collection, or a comma-separated list of chained, run, and
   tagged collections.
-
 - ``--output`` (``-o``) identifies the output collection in the butler
   repo where the the pipeline outputs will be written.  Note that the
   ``u/<username>`` part indicates that the outputs will go to that
@@ -45,12 +42,11 @@ Here,
   folders, with appropriate symlinks to scratch space if running at
   NERSC.  A timestamp will be appended to the folder name to identify
   different workflow runs using the same folder name.
-
 - ``--data-query`` (``-d``) This selects the data to be processed and
-   filters along dataset dimensions like ``instrument``, ``detector``,
-   ``exposure``, ``visit``, ``tract``, ``patch``, ``band``, etc..  Note that the
-   relevant dimensions depend on the inputs for the pipeline tasks
-   being run.
+  filters along dataset dimensions like ``instrument``, ``detector``,
+  ``exposure``, ``visit``, ``tract``, ``patch``, ``band``, etc..  Note that the
+  relevant dimensions depend on the inputs for the pipeline tasks
+  being run.
 
 In addition to the `pipeline reference documentation <https://pipelines.lsst.io/modules/lsst.ctrl.mpexec/pipetask.html#pipetask>`_, command line help is
 available via ``pipetask run --help``.
