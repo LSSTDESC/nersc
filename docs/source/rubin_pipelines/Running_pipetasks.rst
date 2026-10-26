@@ -12,7 +12,7 @@ The `pipetask run` command
 
 This is the simplest way to run an single pipeline task or full pipeline.  There are number of command line "options" (`see the reference page <https://pipelines.lsst.io/modules/lsst.ctrl.mpexec/pipetask.html#pipetask-run>`_), but only five are typically required.   Here's an example command line:
 
-.. code-block::bash
+.. code-block:: bash
 
    pipetask run \
       --butler-config dp2 \
