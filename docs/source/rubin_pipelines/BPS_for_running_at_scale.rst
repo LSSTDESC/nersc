@@ -9,6 +9,8 @@ BPS - Batch Production Services for running Rubin pipelines at scale
 
 .. _example_bps_yaml_format:
 
+Example BPS yaml config file
+----------------------------
 Here's an example bps yaml for running at NERSC that roughly corresponds to the standalone ``pipetask`` example:
 
 .. code-block:: yaml
@@ -57,48 +59,49 @@ Here's an example bps yaml for running at NERSC that roughly corresponds to the 
        monitorEnable: true
        monitorFilename: runinfo/monitoring.db
 
-There are some notable differences with respect to the `pipetask` version:
+There are some notable differences with respect to the ``pipetask`` version:
 
 - The ``includeConfigs`` section at the top allows one to include
   other bps yaml configurations.  The one listed in this example
-  provides resource estimates for each kind of pipetask based on
+  provides resource estimates for each kind of pipetask, based on
   running those tasks in production at the Rubin data facilities.
-  These estimates are for memory usage and numbers of cores (a couple
-  tasks run in multithreaded mode), and should be the same for all
-  computing platforms.
+  The estimates are for memory usage and numbers of cores (a couple
+  tasks run in multi-threaded mode), and should be the same for running
+  on any computing platform.
 
 - In the ``payload`` section, ``payloadName`` is used instead of
-  ``output`` since by default, ``bps`` will set ``output =
-  u/{operator}/{payloadName}`` where ``operator`` will be the
-  ``username``, if not explicitly over-ridden in the yaml config.
+  ``output``, since by default ``bps`` will set ``output =
+  u/{operator}/{payloadName}``, where ``operator`` will be
+  ``username`` if not explicitly over-ridden in the yaml config.
 
 - ``wmsServiceClass: lsst.ctrl.bps.parsl.ParslService`` tells ``bps`` to
   use the Parsl-plugin (the HTCondor-based plugin is the default).  In
   addition, the user should set the environment variable
 
-.. code-block:: bash
+  .. code-block:: bash
 
-   BPS_WMS_SERVICE_CLASS=lsst.ctrl.bps.parsl.ParslService
+     BPS_WMS_SERVICE_CLASS=lsst.ctrl.bps.parsl.ParslService
 
-   in the submission environment, otherwise the HTCondor plugin will be
-   assumed for the ``bps`` commands that don't reference the submission
-   yaml directly.
+  in the submission environment.  Otherwise, the HTCondor plugin will be
+  assumed for any ``bps`` commands that don't reference the submission
+  yaml directly.
 
 - The ``computeSite`` and ``site`` sections, as shown in this example, are
   specific to the Parsl plugin.
 
-  The ``computeSite`` selects between the options available under the
-  ``site`` section.  In the ``site`` section, two different computing
-  options are available:
+  The ``computeSite`` entry selects between the options available
+  under the ``site`` section.  In the ``site`` section, two different
+  computing options are defined:
 
-  - ``local``  This will use the cores on the local node for running the
-    pipetasks.  This is convenient for testing or if you have a moderately
-    sized payload that can run on a single perlmutter batch node acquired
-    through ``salloc`` on the interactive queue.  In this example, all
-    128 cores on a perlmutter node have been specified.
-  - ``task_vine`` This uses the TaskVine-based executor available in
+  - ``local``: This will use the cores on the local node for running
+    the pipetasks.  This is convenient for testing or if you have a
+    smaller payload that can run on a single perlmutter batch node
+    acquired on the interactive queue.  In this example, all 128 cores
+    on a perlmutter node have been specified.
+  - ``task_vine``: This uses the TaskVine-based executor available in
     Parsl for distributing the jobs to the workers.  The TaskVine
-    executor uses the resource information, i.e., the requested memory and
-    cpus provided in ``${DRP_PIPE_DIR}/bps/resources/LSSTCam/DRP.yaml``,
-    to pack the worker nodes based on the available resources.
+    executor uses the resource information, i.e., the memory and CPU
+    requests provided in
+    ``${DRP_PIPE_DIR}/bps/resources/LSSTCam/DRP.yaml``, to pack the
+    worker nodes based on the available resources.
 
