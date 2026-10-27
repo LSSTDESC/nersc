@@ -209,14 +209,3 @@ information on the status of any particular workflow, do
 
 where ``<run_id>`` is given in the table of runs from the ``bps_report --list``
 command.
-
-.. _interacting_with_a_butler_repo:
-
-Interacting with butler repos at NERSC
---------------------------------------
-
-
-.. _writing_pipetasks:
-
-Writing pipetasks
------------------

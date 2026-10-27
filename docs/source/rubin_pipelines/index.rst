@@ -1,5 +1,5 @@
-Getting Started at NERSC 
-======================================
+Running Rubin Pipelines at NERSC
+================================
 
 .. toctree::
    :maxdepth: 1
