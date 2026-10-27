@@ -199,13 +199,20 @@ a given submission directory, the ``bps_report`` command can be used:
 .. code-block:: bash
 
    $ bps_report --list
+   Available workflows:
+                                    run_id                                      workflow_name                  time_began  tasks_completed_count
+   0  2d89e3d5-5eca-4435-a1af-9bb56301b1aa  u_jchiang8_dp2_anacal_systematics_20261027T163...  2026-10-27 09:40:46.785110                     77
+
 
 This will list all of thew workflows in the monitoring database.  To get
-information on the status of any particular workflow, do
+information on the status of any particular workflow, one can do, e.g.,
 
 .. code-block:: bash
 
-   $ bps_report --run_id <run_id>
+   $ bps_report --run_id 2d89e3d5-5eca-4435-a1af-9bb56301b1aa
+   --run_id=2d89e3d5-5eca-4435-a1af-9bb56301b1aa
+   task_type               pending   launched    running  exec_done     failed   dep_fail      total
+   buildCellSystematics          0        221          2         77          0          0        300
 
 where ``<run_id>`` is given in the table of runs from the ``bps_report --list``
 command.
