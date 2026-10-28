@@ -1,3 +1,17 @@
 .tight-table td {
     white-space: normal !important;
 }
+
+.sidebar-toggle {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 1000;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+  body.sidebar-hidden .wy-nav-side { display: none; }
+  body.sidebar-hidden .wy-nav-content-wrap { margin-left: 0; }
+}
