@@ -36,6 +36,8 @@ html_css_files = [
     'css/custom.css',
 ]
 
+html_js_files = ["js/toggle_sidebar.js"]
+
 html_theme_options = {
     "secondary_sidebar_items": [],
 }
