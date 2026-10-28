@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using BPS for running Rubin pipelines at scale &mdash; LSSTDESC NERSC Docs 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=d7e3758a" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Writing pipetasks and pipelines" href="Writing_pipetasks_and_pipelines.html" />
+    <link rel="prev" title="Running Rubin pipetasks" href="Running_pipetasks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LSSTDESC NERSC Docs
+              <img src="../_static/desc_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started at NERSC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Running Rubin Pipelines at NERSC</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Working_with_NERSC_repos.html">Working with the butler repos at NERSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Running_pipetasks.html">Running Rubin pipetasks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using BPS for running Rubin pipelines at scale</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-the-submission-environment">Setting up the submission environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-bps-yaml-config-file">Example BPS yaml config file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scaling-up-to-multiple-nodes">Scaling up to multiple nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#submitting-a-workflow">Submitting a workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#monitoring-workflow-progress">Monitoring workflow progress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pipetask-log-files">Pipetask log files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Writing_pipetasks_and_pipelines.html">Writing pipetasks and pipelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LSSTDESC NERSC Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Running Rubin Pipelines at NERSC</a></li>
+      <li class="breadcrumb-item active">Using BPS for running Rubin pipelines at scale</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/rubin_pipelines/BPS_for_running_at_scale.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-bps-for-running-rubin-pipelines-at-scale">
+<h1>Using BPS for running Rubin pipelines at scale<a class="headerlink" href="#using-bps-for-running-rubin-pipelines-at-scale" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#setting-up-the-submission-environment" id="id3">Setting up the submission environment</a></p></li>
+<li><p><a class="reference internal" href="#example-bps-yaml-config-file" id="id4">Example BPS yaml config file</a></p></li>
+<li><p><a class="reference internal" href="#scaling-up-to-multiple-nodes" id="id5">Scaling up to multiple nodes</a></p></li>
+<li><p><a class="reference internal" href="#submitting-a-workflow" id="id6">Submitting a workflow</a></p></li>
+<li><p><a class="reference internal" href="#monitoring-workflow-progress" id="id7">Monitoring workflow progress</a></p></li>
+<li><p><a class="reference internal" href="#pipetask-log-files" id="id8">Pipetask log files</a></p></li>
+</ul>
+</nav>
+<p><a class="reference external" href="https://pipelines.lsst.io/modules/lsst.ctrl.bps/quickstart.html">BPS (Batch Production Services)</a> is
+a package written by the Rubin Data Management team for runnng Rubin
+pipelines at scale.  It provides a plugin interface that allows for
+different workflow management systems to be used to orchestrate the
+execution of large numbers of pipetasks.  At NERSC, we use the
+Parsl-based plugin, <a class="reference external" href="https://github.com/lsst/ctrl_bps_parsl">ctrl_bps_parsl</a>.  The other two supported
+plugins, based on <a class="reference external" href="https://github.com/lsst/ctrl_bps_htcondor">HTCondor</a> and <a class="reference external" href="https://github.com/lsst/ctrl_bps_panda">PanDA</a>, require external
+infrastructure that isn’t available for running at NERSC.</p>
+<section id="setting-up-the-submission-environment">
+<span id="submission-environment"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink">Setting up the submission environment</a><a class="headerlink" href="#setting-up-the-submission-environment" title="Link to this heading"></a></h2>
+<p>For running BPS at NERSC, it recommended to use the CVMFS
+distributions of the Rubin software, since those are kept up-to-date
+with the weekly releases of the Rubin stack and are available on both
+the login and batch nodes.  In addition, the <a class="reference external" href="https://github.com/LSSTDESC/bps_parsl_sites">LSSTDESC:bps_parsl_sites</a> package provides
+additional site configuration classes for running at NERSC (or on
+other slurm batch systems).  Here’s a typical set up for running at
+NERSC:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/cvmfs/sw.lsst.eu/almalinux-x86_64/lsst_distrib/w_2026_43/loadLSST-ext.bash
+setup<span class="w"> </span>lsst_distrib
+setup<span class="w"> </span>-r<span class="w"> </span>&lt;path_to&gt;/bps_parsl_sites<span class="w"> </span>-j
+<span class="nb">export</span><span class="w"> </span><span class="nv">BPS_WMS_SERVICE_CLASS</span><span class="o">=</span>lsst.ctrl.bps.parsl.ParslService
+</pre></div>
+</div>
+<p>This assumes that a local copy of <code class="docutils literal notranslate"><span class="pre">bps_parsl_sites</span></code> has been cloned
+and built following the <a class="reference external" href="https://github.com/LSSTDESC/bps_parsl_sites/blob/main/doc/usage.rst">package instructions</a>.
+The <code class="docutils literal notranslate"><span class="pre">BPS_WMS_SERVICE_CLASS</span></code> environment variable tells <code class="docutils literal notranslate"><span class="pre">bps</span></code> to
+use the Parsl plugin instead of the default HTCondor plugin.
+Additional python packages can be added by modifying the
+<code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment variable.  Note that the current submission
+environment will be replicated on the allocated compute nodes.</p>
+</section>
+<section id="example-bps-yaml-config-file">
+<span id="example-bps-yaml-format"></span><h2><a class="toc-backref" href="#id4" role="doc-backlink">Example BPS yaml config file</a><a class="headerlink" href="#example-bps-yaml-config-file" title="Link to this heading"></a></h2>
+<p>Here’s an example bps yaml for running at NERSC that roughly
+corresponds to the standalone <code class="docutils literal notranslate"><span class="pre">pipetask</span></code> example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">includeConfigs</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DRP_PIPE_DIR}/bps/resources/LSSTCam/DRP.yaml</span>
+
+<span class="nt">pipelineYaml</span><span class="p">:</span><span class="w"> </span><span class="s">"${DRP_PIPE_DIR}/pipelines/LSSTCam/DRP.yaml#isr,calibrateImage"</span>
+
+<span class="nt">payload</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">butlerConfig</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dp2</span>
+<span class="w">  </span><span class="nt">inCollection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LSSTCam/defaults</span>
+<span class="w">  </span><span class="nt">payloadName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single_ccd_test</span>
+<span class="w">  </span><span class="nt">dataQuery</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">    </span><span class="no">instrument='LSSTCam'</span>
+<span class="w">    </span><span class="no">AND detector=94</span>
+<span class="w">    </span><span class="no">AND exposure=2025122500001</span>
+
+<span class="nt">computeSite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task_vine</span>
+
+<span class="nt">site</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">local</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lsst.ctrl.bps.parsl.sites.Local</span>
+<span class="w">    </span><span class="nt">cores</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128</span>
+<span class="w">    </span><span class="nt">monitorEnable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">monitorFilename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">runinfo/monitoring.db</span>
+<span class="w">  </span><span class="nt">task_vine</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bps_parsl_sites.SlurmTaskVine</span>
+<span class="w">    </span><span class="nt">walltime</span><span class="p">:</span><span class="w"> </span><span class="s">"05:00:00"</span>
+<span class="w">    </span><span class="nt">qos</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regular</span>
+<span class="c1">#    walltime: "00:30:00"</span>
+<span class="c1">#    qos: debug</span>
+<span class="w">    </span><span class="nt">constraint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cpu</span>
+<span class="w">    </span><span class="nt">exclusive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">nodes_per_block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">provider_options</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">init_blocks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="nt">min_blocks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">      </span><span class="nt">max_blocks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">    </span><span class="nt">scheduler_options</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">#SBATCH --module=cvmfs</span>
+<span class="w">      </span><span class="no">#SBATCH --account=m1727</span>
+<span class="w">    </span><span class="nt">worker_options</span><span class="p">:</span><span class="w"> </span><span class="s">"--memory=480000"</span><span class="w">  </span><span class="c1"># total memory in MB</span>
+<span class="w">    </span><span class="nt">monitorEnable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">monitorFilename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">runinfo/monitoring.db</span>
+</pre></div>
+</div>
+<p>There are some notable differences with respect to the <code class="docutils literal notranslate"><span class="pre">pipetask</span></code> version:</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">includeConfigs</span></code> section at the top allows one to include
+other bps yaml configurations.  The one listed in this example
+provides <a class="reference external" href="https://github.com/lsst/drp_pipe/blob/w.2026.43/bps/resources/LSSTCam/DRP.yaml">resource estimates for each kind of pipetask</a>,
+which are based on running those tasks in production at the Rubin
+data facilities.  Those resource estimates can include memory
+requirements, numbers of cores to use (for <a class="reference external" href="https://github.com/lsst/drp_pipe/blob/w.2026.43/bps/resources/LSSTCam/DRP.yaml#L177-L188">those few tasks</a>
+that run in multi-processing mode), as well as additional pipetask
+command line arguments.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">payload</span></code> section, <code class="docutils literal notranslate"><span class="pre">payloadName</span></code> is used instead of
+<code class="docutils literal notranslate"><span class="pre">output</span></code>, since by default <code class="docutils literal notranslate"><span class="pre">bps</span></code> will set <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">=</span>
+<span class="pre">u/{operator}/{payloadName}</span></code>, where <code class="docutils literal notranslate"><span class="pre">operator</span></code> will be
+<code class="docutils literal notranslate"><span class="pre">username</span></code>, if not explicitly over-ridden in the yaml config.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">computeSite</span></code> and <code class="docutils literal notranslate"><span class="pre">site</span></code> sections, as shown in this example,
+are specific to the Parsl plugin.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">computeSite</span></code> entry selects between the options available
+under the <code class="docutils literal notranslate"><span class="pre">site</span></code> section.  In the <code class="docutils literal notranslate"><span class="pre">site</span></code> section, two different
+computing options are defined:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">local</span></code>: This will use the cores on the local node for running
+the pipetasks.  This is convenient for testing or if you have a
+smaller payload that can run on a single perlmutter batch node
+acquired from the interactive queue.  In this example, all 128 cores
+on a perlmutter node have been specified.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">task_vine</span></code>: This uses the TaskVine-based executor available in
+Parsl for distributing the jobs to the workers.  The TaskVine
+executor uses the resource information, i.e., the memory and CPU
+requests provided in
+<code class="docutils literal notranslate"><span class="pre">${DRP_PIPE_DIR}/bps/resources/LSSTCam/DRP.yaml</span></code>, to pack the
+worker nodes based on the available resources.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="scaling-up-to-multiple-nodes">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Scaling up to multiple nodes</a><a class="headerlink" href="#scaling-up-to-multiple-nodes" title="Link to this heading"></a></h2>
+<p>There are several settings in the <code class="docutils literal notranslate"><span class="pre">task_vine</span></code> site example above that
+are relevant for making effective use of the NERSC batch resources.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">walltime</span></code> and <code class="docutils literal notranslate"><span class="pre">qos</span></code>: For testing configurations, using <code class="docutils literal notranslate"><span class="pre">qos:</span>
+<span class="pre">debug</span></code> and <code class="docutils literal notranslate"><span class="pre">walltime</span></code> values up to 30 mins (“00:30:00”) will
+provide quick turnaround time in the queues.  For production runs
+using <code class="docutils literal notranslate"><span class="pre">qos:</span> <span class="pre">regular</span></code>, one can choose <code class="docutils literal notranslate"><span class="pre">walltime</span></code> values
+corresponding to the <a class="reference external" href="https://www.nersc.gov/users/status/queue-wait-times">queue</a> with the
+shortest wait time, as long as the requested time is longer than the
+longest anticipated job run time.  The Parsl plugin will continue
+submitting slurm worker jobs until the processing is finished.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exclusive:</span> <span class="pre">true</span></code>: This ensures that whole nodes are allocated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nodes_per_block:</span> <span class="pre">1</span></code>: Parsl defines workers in terms of “blocks”,
+which can consist of multiple nodes per block in order to support
+MPI processing across multiple nodes.  Since the Rubin code does not
+use MPI, this should be set to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">provider_options</span></code>: Here <code class="docutils literal notranslate"><span class="pre">init_blocks</span></code> is the initial number of
+blocks to schedule, and <code class="docutils literal notranslate"><span class="pre">min_blocks</span></code> and <code class="docutils literal notranslate"><span class="pre">max_blocks</span></code> give the
+range of the number of blocks that Parsl will use for processing.
+For example, if you would like your workflow to use as many as 100
+nodes for processing, but can still do useful work with fewer, then
+set <code class="docutils literal notranslate"><span class="pre">min_blocks:</span> <span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">max_blocks:</span> <span class="pre">100</span></code>.  Parsl will submit
+100 single-node batch jobs, and as each slurm job starts, it will
+start scheduling pipetask jobs to that worker.  As the number of
+pipetask jobs start to wind down, the slurm worker jobs will
+timeout, and Parsl will only submit additional batch jobs as needed
+in order to process the remaing pipetask jobs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">worker_options:</span> <span class="pre">&quot;--memory=480000&quot;</span></code>: This can be used to set the
+amount of memory (in MB) per node to use for running pipetasks.
+Since each perlmutter node nominally has 512 GB of memory, it’s
+recommended to set this to a somewhat smaller number to provide some
+head room for jobs that may use more than their requested memory and
+to reserve memory for system resources.</p></li>
+</ul>
+</section>
+<section id="submitting-a-workflow">
+<span id="id1"></span><h2><a class="toc-backref" href="#id6" role="doc-backlink">Submitting a workflow</a><a class="headerlink" href="#submitting-a-workflow" title="Link to this heading"></a></h2>
+<p>After setting up the submission environment on a NERSC login node and
+preparing the bps submission yaml, the following command can be used
+to submit the workflow:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="o">(</span>bps<span class="w"> </span>submit<span class="w"> </span>&lt;bps_yaml_file&gt;<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>^parsl.process_loggers<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>^monitoring_<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>bps_submission.log<span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>The pipes through <code class="docutils literal notranslate"><span class="pre">grep</span></code> filter out some noisy Parsl logging that
+cannot be suppressed without also suppressing the more informative
+<code class="docutils literal notranslate"><span class="pre">bps</span></code> logging info.  Redirecting to a log file and running in
+background allows one to disconnect from the login node after submitting.</p>
+</section>
+<section id="monitoring-workflow-progress">
+<span id="id2"></span><h2><a class="toc-backref" href="#id7" role="doc-backlink">Monitoring workflow progress</a><a class="headerlink" href="#monitoring-workflow-progress" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">bps</span></code> submission process will write to two subfolders in the
+submission directory: the <code class="docutils literal notranslate"><span class="pre">submit</span></code> folder will contain information
+from <code class="docutils literal notranslate"><span class="pre">bps</span></code> on the configuration and state of the workflow, and the
+<code class="docutils literal notranslate"><span class="pre">runinfo</span></code> folder will contain logging information from Parsl as well
+as the sqlite monitoring database that keeps track of the state of the
+individual pipetask jobs.   Note that the <code class="docutils literal notranslate"><span class="pre">monitorEnable</span></code>
+and <code class="docutils literal notranslate"><span class="pre">monitorFilename</span></code> entries in the site configs above need to be set
+exactly as shown for workflow monitoring to work.</p>
+<p>To find information on all of the workflows that are being tracked in
+a given submission directory, the <code class="docutils literal notranslate"><span class="pre">bps_report</span></code> command can be used:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bps_report<span class="w"> </span>--list
+Available<span class="w"> </span>workflows:
+<span class="w">                                 </span>run_id<span class="w">                                      </span>workflow_name<span class="w">                  </span>time_began<span class="w">  </span>tasks_completed_count
+<span class="m">0</span><span class="w">  </span>2d89e3d5-5eca-4435-a1af-9bb56301b1aa<span class="w">  </span>u_jchiang8_dp2_anacal_systematics_20261027T163...<span class="w">  </span><span class="m">2026</span>-10-27<span class="w"> </span><span class="m">09</span>:40:46.785110<span class="w">                     </span><span class="m">77</span>
+</pre></div>
+</div>
+<p>This will list all of thew workflows in the monitoring database.  To get
+information on the status of any particular workflow, one can do, e.g.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bps_report<span class="w"> </span>--run_id<span class="w"> </span>2d89e3d5-5eca-4435-a1af-9bb56301b1aa
+--run_id<span class="o">=</span>2d89e3d5-5eca-4435-a1af-9bb56301b1aa
+task_type<span class="w">               </span>pending<span class="w">   </span>launched<span class="w">    </span>running<span class="w">  </span>exec_done<span class="w">     </span>failed<span class="w">   </span>dep_fail<span class="w">      </span>total
+buildCellSystematics<span class="w">          </span><span class="m">0</span><span class="w">        </span><span class="m">221</span><span class="w">          </span><span class="m">2</span><span class="w">         </span><span class="m">77</span><span class="w">          </span><span class="m">0</span><span class="w">          </span><span class="m">0</span><span class="w">        </span><span class="m">300</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;run_id&gt;</span></code> is given in the table of runs from the <code class="docutils literal notranslate"><span class="pre">bps_report</span> <span class="pre">--list</span></code>
+command.</p>
+</section>
+<section id="pipetask-log-files">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Pipetask log files</a><a class="headerlink" href="#pipetask-log-files" title="Link to this heading"></a></h2>
+<p>Each pipetask generates log output, and for running under <code class="docutils literal notranslate"><span class="pre">bps</span></code>,
+that output is captured in log files with extensions <code class="docutils literal notranslate"><span class="pre">.stderr</span></code> in
+the local <code class="docutils literal notranslate"><span class="pre">submit</span></code> directory tree.  For the example bps yaml shown
+above, those log files would be in</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>submit/u/&lt;username&gt;/single_ccd_test/&lt;timestamp&gt;/logs/&lt;pipetask_name&gt;/&lt;data_dimension_subfolders&gt;
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">&lt;timestamp&gt;</span></code> would be something like <code class="docutils literal notranslate"><span class="pre">20261027T163952Z</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">&lt;pipetask_name&gt;</span></code> would be <code class="docutils literal notranslate"><span class="pre">isr</span></code> or <code class="docutils literal notranslate"><span class="pre">calibrateImage</span></code>.  The
+<code class="docutils literal notranslate"><span class="pre">&lt;data_dimension_subfolders&gt;</span></code> may include subfolders organized by
+data dimensions, such as <code class="docutils literal notranslate"><span class="pre">detector</span></code>, <code class="docutils literal notranslate"><span class="pre">visit</span></code>, <code class="docutils literal notranslate"><span class="pre">patch</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">tract</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Running_pipetasks.html" class="btn btn-neutral float-left" title="Running Rubin pipetasks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Writing_pipetasks_and_pipelines.html" class="btn btn-neutral float-right" title="Writing pipetasks and pipelines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, LSSTDESC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

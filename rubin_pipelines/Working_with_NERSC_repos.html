@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with the butler repos at NERSC &mdash; LSSTDESC NERSC Docs 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=d7e3758a" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Running Rubin pipetasks" href="Running_pipetasks.html" />
+    <link rel="prev" title="Running Rubin Pipelines at NERSC" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LSSTDESC NERSC Docs
+              <img src="../_static/desc_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started at NERSC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Running Rubin Pipelines at NERSC</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Working with the butler repos at NERSC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#repository-aliases-at-nersc">Repository aliases at NERSC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-your-user-area-in-a-butler-repo">Setting up your “user” area in a butler repo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Running_pipetasks.html">Running Rubin pipetasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BPS_for_running_at_scale.html">Using BPS for running Rubin pipelines at scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Writing_pipetasks_and_pipelines.html">Writing pipetasks and pipelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LSSTDESC NERSC Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Running Rubin Pipelines at NERSC</a></li>
+      <li class="breadcrumb-item active">Working with the butler repos at NERSC</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/rubin_pipelines/Working_with_NERSC_repos.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="working-with-the-butler-repos-at-nersc">
+<h1>Working with the butler repos at NERSC<a class="headerlink" href="#working-with-the-butler-repos-at-nersc" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#repository-aliases-at-nersc" id="id1">Repository aliases at NERSC</a></p></li>
+<li><p><a class="reference internal" href="#setting-up-your-user-area-in-a-butler-repo" id="id2">Setting up your “user” area in a butler repo</a></p></li>
+</ul>
+</nav>
+<section id="repository-aliases-at-nersc">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Repository aliases at NERSC</a><a class="headerlink" href="#repository-aliases-at-nersc" title="Link to this heading"></a></h2>
+<p>When using the butler, we often need to refer to the repository we are
+working with and this usually requires referencing the full path,
+which is tedious. There is a predefined set of repo aliases which you
+can use by defining the following environment variable. Consider
+adding this to your <code class="docutils literal notranslate"><span class="pre">$HOME/.bashrc</span></code> file so that it is always
+defined:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DAF_BUTLER_REPOSITORY_INDEX</span><span class="o">=</span>/global/cfs/cdirs/lsst/production/gen3/shared/data-repos.yaml
+</pre></div>
+</div>
+<p>With that environment variable defined you can use the predefined
+aliases for the butler config in your calls, e.g., to query for all of
+the collections in the <code class="docutils literal notranslate"><span class="pre">dp2</span></code> repo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>butler<span class="w"> </span>query-collections<span class="w"> </span>dp2
+</pre></div>
+</div>
+<p>The available repo aliases can be found either by inspecting the
+<code class="docutils literal notranslate"><span class="pre">data-repos.yaml</span></code> file directly or by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import lsst.daf.butler as daf_butler; print(daf_butler.Butler.get_known_repos())"</span>
+</pre></div>
+</div>
+</section>
+<section id="setting-up-your-user-area-in-a-butler-repo">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Setting up your “user” area in a butler repo</a><a class="headerlink" href="#setting-up-your-user-area-in-a-butler-repo" title="Link to this heading"></a></h2>
+<p>At NERSC our butler repositories are set up on the Community File
+System (<code class="docutils literal notranslate"><span class="pre">$CFS</span></code>) which is for long term storage while the
+<code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> area offers more efficient I/O.  To take advantage of the
+improved I/O performance on <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> and to reduce the amount of
+disk space we use on <code class="docutils literal notranslate"><span class="pre">$CFS</span></code>, we are encouraged to set up a working
+area on our personal <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> and create a symlink pointing to
+that directory from the repo’s <code class="docutils literal notranslate"><span class="pre">u</span></code> directory on <code class="docutils literal notranslate"><span class="pre">$CFS</span></code>.
+Permissions should be set to allow <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">rwx</span></code> and grant <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">rx</span></code>
+access to <code class="docutils literal notranslate"><span class="pre">lsst</span></code>.  Here is a full example using the <code class="docutils literal notranslate"><span class="pre">dp2</span></code> repo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$SCRATCH</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>DP2/repo/u/<span class="nv">$USER</span>
+chgrp<span class="w"> </span>-R<span class="w"> </span>lsst<span class="w"> </span>DP1
+chmod<span class="w"> </span>-R<span class="w"> </span>g+rx<span class="w"> </span>DP1
+chmod<span class="w"> </span>-R<span class="w"> </span>u+rwx<span class="w"> </span>DP1
+</pre></div>
+</div>
+<p>Now create a symlink in the data repository on <code class="docutils literal notranslate"><span class="pre">$CFS</span></code> to your
+working directory on <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$CFS</span>/lsst/production/gen3/rubin/DP2/repo/u
+ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$SCRATCH</span>/DP2/repo/u/<span class="nv">$USER</span><span class="w"> </span><span class="nv">$USER</span>
+</pre></div>
+</div>
+<p>Please be aware that the NERSC <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> area is subject to
+<a class="reference external" href="https://docs.nersc.gov/filesystems/perlmutter-scratch/#purge-rules-and-methods">purging files</a>
+that are untouched for at least 8 weeks.  Please consider backing up
+your data on <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> to <a class="reference external" href="https://confluence.slac.stanford.edu/x/9Kc7Eg">HPSS (tape)</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Running Rubin Pipelines at NERSC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Running_pipetasks.html" class="btn btn-neutral float-right" title="Running Rubin pipetasks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, LSSTDESC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
