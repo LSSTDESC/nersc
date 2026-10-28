@@ -6,6 +6,7 @@ Welcome to LSSTDESC's NERSC Documentation
    :caption: Contents:
 
    getting_started/index
+   rubin_pipelines/index
 
 Indices and tables
 ==================
