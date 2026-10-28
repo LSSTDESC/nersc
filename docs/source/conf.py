@@ -41,3 +41,10 @@ html_js_files = ["js/toggle_sidebar.js"]
 html_theme_options = {
     "secondary_sidebar_items": [],
 }
+
+/* Use the space left by the removed right sidebar */
+@media (min-width: 1200px) {
+  .bd-main .bd-content .bd-article-container {
+    max-width: 100%;
+  }
+}
