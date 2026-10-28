@@ -35,3 +35,5 @@ html_logo = "_static/desc_logo.png"
 html_css_files = [
     'css/custom.css',
 ]
+
+html_js_files = ["js/toggle_sidebar.js"]
