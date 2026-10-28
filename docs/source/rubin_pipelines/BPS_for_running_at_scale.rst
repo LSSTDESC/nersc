@@ -35,6 +35,7 @@ NERSC:
 .. code-block:: bash
 
    source /cvmfs/sw.lsst.eu/almalinux-x86_64/lsst_distrib/w_2026_43/loadLSST-ext.bash
+   setup lsst_distrib
    setup -r <path_to>/bps_parsl_sites -j
    export BPS_WMS_SERVICE_CLASS=lsst.ctrl.bps.parsl.ParslService
 
