@@ -35,3 +35,7 @@ html_logo = "_static/desc_logo.png"
 html_css_files = [
     'css/custom.css',
 ]
+
+html_theme_options = {
+    "secondary_sidebar_items": [],
+}
