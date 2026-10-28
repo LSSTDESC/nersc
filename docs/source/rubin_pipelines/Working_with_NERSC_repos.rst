@@ -1,4 +1,4 @@
-Interacting with butler repos at NERSC
+Working with the butler repos at NERSC
 ======================================
 
 .. contents::
@@ -70,6 +70,6 @@ working directory on ``$SCRATCH``:
 Please be aware that the NERSC ``$SCRATCH`` area is subject to
 `purging files
 <https://docs.nersc.gov/filesystems/perlmutter-scratch/#purge-rules-and-methods>`_
-that are untouched for 8 weeks.  Please consider backing up your data
-on ``$SCRATCH`` to `HPSS (tape)
+that are untouched for at least 8 weeks.  Please consider backing up
+your data on ``$SCRATCH`` to `HPSS (tape)
 <https://confluence.slac.stanford.edu/x/9Kc7Eg>`_.

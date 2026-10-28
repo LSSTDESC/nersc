@@ -5,9 +5,9 @@ Running Rubin Pipelines at NERSC
    :maxdepth: 1
    :caption: Contents:
 
+   Working_with_NERSC_repos
    Running_pipetasks
    BPS_for_running_at_scale
-   Interacting_with_the_NERSC_repos
    Writing_pipetasks_and_pipelines
 
 

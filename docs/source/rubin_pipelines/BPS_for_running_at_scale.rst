@@ -1,11 +1,22 @@
-BPS - Batch Production Services for running Rubin pipelines at scale
-====================================================================
+Using BPS for running Rubin pipelines at scale
+==============================================
 
 .. contents::
    :local:
    :depth: 1
 
-`BPS <https://pipelines.lsst.io/modules/lsst.ctrl.bps/quickstart.html>`_ is a pacakge for runnng Rubin pipelines at scale.  It provides a plugin interface that allow for different workflow management systems to be used to orchestrate the execution of large numbers of pipetasks.  At NERSC, we use the Parsl-based plugin, `ctrl_bps_parsl <https://github.com/lsst/ctrl_bps_parsl>`_.  The other two supported plugins, based on `HTCondor <https://github.com/lsst/ctrl_bps_htcondor>`_ and `PanDA <https://github.com/lsst/ctrl_bps_panda>`_, require external infrastructure that isn't available for running at NERSC.
+`BPS (Batch Production Services)
+<https://pipelines.lsst.io/modules/lsst.ctrl.bps/quickstart.html>`_ is
+a package written by the Rubin Data Management team for runnng Rubin
+pipelines at scale.  It provides a plugin interface that allows for
+different workflow management systems to be used to orchestrate the
+execution of large numbers of pipetasks.  At NERSC, we use the
+Parsl-based plugin, `ctrl_bps_parsl
+<https://github.com/lsst/ctrl_bps_parsl>`_.  The other two supported
+plugins, based on `HTCondor
+<https://github.com/lsst/ctrl_bps_htcondor>`_ and `PanDA
+<https://github.com/lsst/ctrl_bps_panda>`_, require external
+infrastructure that isn't available for running at NERSC.
 
 .. _submission_environment:
 
@@ -14,8 +25,8 @@ Setting up the submission environment
 
 For running BPS at NERSC, it recommended to use the CVMFS
 distributions of the Rubin software, since those are kept up-to-date
-with weekly releases of the Rubin stack and are available on both the
-login and batch nodes.  In addition, the `LSSTDESC:bps_parsl_sites
+with the weekly releases of the Rubin stack and are available on both
+the login and batch nodes.  In addition, the `LSSTDESC:bps_parsl_sites
 <https://github.com/LSSTDESC/bps_parsl_sites>`_ package provides
 additional site configuration classes for running at NERSC (or on
 other slurm batch systems).  Here's a typical set up for running at
@@ -30,14 +41,18 @@ NERSC:
 This assumes that a local copy of ``bps_parsl_sites`` has been cloned
 and built following the `package instructions
 <https://github.com/LSSTDESC/bps_parsl_sites/blob/main/doc/usage.rst>`_.
-The ``BPS_WMS_SERVICE_CLASS`` environment variable tells ``bps`` to use
-the Parsl-plugin instead of the default HTCondor-plugin.
+The ``BPS_WMS_SERVICE_CLASS`` environment variable tells ``bps`` to
+use the Parsl plugin instead of the default HTCondor plugin.
+Additional python packages can be added by modifying the
+``PYTHONPATH`` environment variable.  Note that the current submission
+environment will be replicated on the allocated compute nodes.
 
 .. _example_bps_yaml_format:
 
 Example BPS yaml config file
 ----------------------------
-Here's an example bps yaml for running at NERSC that roughly corresponds to the standalone ``pipetask`` example:
+Here's an example bps yaml for running at NERSC that roughly
+corresponds to the standalone ``pipetask`` example:
 
 .. code-block:: yaml
 
@@ -87,19 +102,22 @@ There are some notable differences with respect to the ``pipetask`` version:
 
 - The ``includeConfigs`` section at the top allows one to include
   other bps yaml configurations.  The one listed in this example
-  provides resource estimates for each kind of pipetask, based on
-  running those tasks in production at the Rubin data facilities.
-  The estimates are for memory usage and numbers of cores (a couple
-  tasks run in multi-threaded mode), and should be the same for running
-  on any computing platform.
+  provides `resource estimates for each kind of pipetask
+  <https://github.com/lsst/drp_pipe/blob/w.2026.43/bps/resources/LSSTCam/DRP.yaml>`_,
+  which are based on running those tasks in production at the Rubin
+  data facilities.  Those resource estimates can include memory
+  requirements, numbers of cores to use (for `those few tasks
+  <https://github.com/lsst/drp_pipe/blob/w.2026.43/bps/resources/LSSTCam/DRP.yaml#L177-L188>`_
+  that run in multi-threaded mode), as well as additional pipetask
+  command line arguments.
 
 - In the ``payload`` section, ``payloadName`` is used instead of
   ``output``, since by default ``bps`` will set ``output =
   u/{operator}/{payloadName}``, where ``operator`` will be
-  ``username`` if not explicitly over-ridden in the yaml config.
+  ``username``, if not explicitly over-ridden in the yaml config.
 
-- The ``computeSite`` and ``site`` sections, as shown in this example, are
-  specific to the Parsl plugin.
+- The ``computeSite`` and ``site`` sections, as shown in this example,
+  are specific to the Parsl plugin.
 
   The ``computeSite`` entry selects between the options available
   under the ``site`` section.  In the ``site`` section, two different
@@ -108,7 +126,7 @@ There are some notable differences with respect to the ``pipetask`` version:
   - ``local``: This will use the cores on the local node for running
     the pipetasks.  This is convenient for testing or if you have a
     smaller payload that can run on a single perlmutter batch node
-    acquired on the interactive queue.  In this example, all 128 cores
+    acquired from the interactive queue.  In this example, all 128 cores
     on a perlmutter node have been specified.
   - ``task_vine``: This uses the TaskVine-based executor available in
     Parsl for distributing the jobs to the workers.  The TaskVine
@@ -132,7 +150,7 @@ are relevant for making effective use of the NERSC batch resources.
   corresponding to the `queue
   <https://www.nersc.gov/users/status/queue-wait-times>`_ with the
   shortest wait time, as long as the requested time is longer than the
-  longest anticipated job run time.  The Parsl-plugin will continue
+  longest anticipated job run time.  The Parsl plugin will continue
   submitting slurm worker jobs until the processing is finished.
 
 - ``exclusive: true``: This ensures that whole nodes are allocated.
@@ -149,9 +167,9 @@ are relevant for making effective use of the NERSC batch resources.
   nodes for processing, but can still do useful work with fewer, then
   set ``min_blocks: 0`` and ``max_blocks: 100``.  Parsl will submit
   100 single-node batch jobs, and as each slurm job starts, it will
-  start submitting pipetask jobs to that worker.  As the number of
+  start scheduling pipetask jobs to that worker.  As the number of
   pipetask jobs start to wind down, the slurm worker jobs will
-  timeout, and parsl will only submit additional batch jobs as needed
+  timeout, and Parsl will only submit additional batch jobs as needed
   in order to process the remaing pipetask jobs.
 
 - ``worker_options: "--memory=480000"``: This can be used to set the
@@ -174,7 +192,7 @@ to submit the workflow:
 
    $ $ (bps submit <bps_yaml_file> 2>&1 | grep -v ^parsl.process_loggers | grep -v ^monitoring_) &> bps_submission.log &
 
-The pipes through ``grep`` filter out some noisy parsl logging that
+The pipes through ``grep`` filter out some noisy Parsl logging that
 cannot be suppressed without also suppressing the more informative
 ``bps`` logging info.  Redirecting to a log file and running in
 background allows one to disconnect from the login node after submitting.
@@ -187,7 +205,7 @@ Monitoring workflow progress
 The ``bps`` submission process will write to two subfolders in the
 submission directory: the ``submit`` folder will contain information
 from ``bps`` on the configuration and state of the workflow, and the
-``runinfo`` folder will contain logging information from parsl as well
+``runinfo`` folder will contain logging information from Parsl as well
 as the sqlite monitoring database that keeps track of the state of the
 individual pipetask jobs.   Note that the ``monitorEnable``
 and ``monitorFilename`` entries in the site configs above need to be set
@@ -216,3 +234,21 @@ information on the status of any particular workflow, one can do, e.g.,
 
 where ``<run_id>`` is given in the table of runs from the ``bps_report --list``
 command.
+
+.. _pipetask_log_files
+
+Pipetask log files
+------------------
+
+Each pipetask generates log output, and for running under ``bps`` that
+output is captured in log files with extensions ``.stderr`` under the
+local ``submit`` directory tree.  For the example bps yaml shown
+above, those log files would be in
+
+.. code-block:: bash
+
+  submit/u/<username>/single_ccd_test/<timestamp>/logs/<pipetask_name>
+
+Here ``<timestamp>`` would be something like ``20261027T163952Z``, and
+``<pipetask_name>`` would be something like ``isr``,
+``calibrateImage``, etc..
