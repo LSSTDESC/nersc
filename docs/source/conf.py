@@ -25,7 +25,7 @@ exclude_patterns = []
 root_doc = "index"
 
 # -- Options for HTML output -------------------------------------------------
-html_theme = "sphinx_rtd_theme"          # Read-the-Docs theme
+html_theme = "sphinx_book_theme"          # Read-the-Docs theme
 html_static_path = ["_static"]
 
 # Optional: put a logo in _static/ and reference it here
