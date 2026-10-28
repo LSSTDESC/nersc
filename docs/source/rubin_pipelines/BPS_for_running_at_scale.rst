@@ -108,7 +108,7 @@ There are some notable differences with respect to the ``pipetask`` version:
   data facilities.  Those resource estimates can include memory
   requirements, numbers of cores to use (for `those few tasks
   <https://github.com/lsst/drp_pipe/blob/w.2026.43/bps/resources/LSSTCam/DRP.yaml#L177-L188>`_
-  that run in multi-threaded mode), as well as additional pipetask
+  that run in multi-processing mode), as well as additional pipetask
   command line arguments.
 
 - In the ``payload`` section, ``payloadName`` is used instead of
@@ -190,7 +190,7 @@ to submit the workflow:
 
 .. code-block:: bash
 
-   $ $ (bps submit <bps_yaml_file> 2>&1 | grep -v ^parsl.process_loggers | grep -v ^monitoring_) &> bps_submission.log &
+   $ (bps submit <bps_yaml_file> 2>&1 | grep -v ^parsl.process_loggers | grep -v ^monitoring_) &> bps_submission.log &
 
 The pipes through ``grep`` filter out some noisy Parsl logging that
 cannot be suppressed without also suppressing the more informative
@@ -240,15 +240,17 @@ command.
 Pipetask log files
 ------------------
 
-Each pipetask generates log output, and for running under ``bps`` that
-output is captured in log files with extensions ``.stderr`` under the
-local ``submit`` directory tree.  For the example bps yaml shown
+Each pipetask generates log output, and for running under ``bps``,
+that output is captured in log files with extensions ``.stderr`` in
+the local ``submit`` directory tree.  For the example bps yaml shown
 above, those log files would be in
 
 .. code-block:: bash
 
-  submit/u/<username>/single_ccd_test/<timestamp>/logs/<pipetask_name>
+  submit/u/<username>/single_ccd_test/<timestamp>/logs/<pipetask_name>/<data_dimension_subfolders>
 
 Here ``<timestamp>`` would be something like ``20261027T163952Z``, and
-``<pipetask_name>`` would be something like ``isr``,
-``calibrateImage``, etc..
+``<pipetask_name>`` would be ``isr`` or ``calibrateImage``.  The
+``<data_dimension_subfolders>`` may include subfolders organized by
+data dimensions, such as ``detector``, ``visit``, ``patch``, or
+``tract``.
