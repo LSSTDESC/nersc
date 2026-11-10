@@ -8,3 +8,11 @@
     max-width: 100%;
   }
 }
+
+@media (min-width: 992px) {
+  html.sidebar-collapsed .bd-sidebar-primary {
+    margin-left: -20%;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
