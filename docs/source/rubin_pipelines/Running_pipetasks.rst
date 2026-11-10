@@ -18,7 +18,7 @@ This is the simplest way to run an single pipeline task or full pipeline.  There
       --butler-config dp2 \
       --pipeline "${DRP_PIPE_DIR}/pipelines/LSSTCam/DRP.yaml#isr,calibrateImage" \
       --input LSSTCam/defaults \
-      --output u/<username>/single_ccd_test \
+      --output u/$USER/single_ccd_test \
       --data-query "instrument='LSSTCam' and detector=94 and exposure=2025122500001"
 
 For the various options,
