@@ -25,7 +25,7 @@ exclude_patterns = []
 root_doc = "index"
 
 # -- Options for HTML output -------------------------------------------------
-html_theme = "sphinx_rtd_theme"          # Read-the-Docs theme
+html_theme = "sphinx_book_theme"          # Read-the-Docs theme
 html_static_path = ["_static"]
 
 # Optional: put a logo in _static/ and reference it here
@@ -35,3 +35,10 @@ html_logo = "_static/desc_logo.png"
 html_css_files = [
     'css/custom.css',
 ]
+
+html_js_files = ["js/toggle_sidebar.js"]
+
+html_theme_options = {
+    "secondary_sidebar_items": [],
+}
+
