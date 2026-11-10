@@ -1,0 +1,639 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Managing a NERSC Computing Account &#8212; LSSTDESC NERSC Docs 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=2ac403f5" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/managing_nersc_account';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/js/toggle_sidebar.js?v=cb1c5278"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/desc_logo.png" class="logo__image only-light" alt="LSSTDESC NERSC Docs 0.1.0 documentation - Home"/>
+    <img src="../_static/desc_logo.png" class="logo__image only-dark pst-js-only" alt="LSSTDESC NERSC Docs 0.1.0 documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">Getting Started at NERSC</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="nersc_account.html">Getting a NERSC Computing Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nersc_data_storage.html">Where to Store Your Data at NERSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nersc_collaboration_accounts.html">NERSC Collaboration Accounts</a></li>
+</ul>
+</details></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rubin_pipelines/index.html">Running Rubin Pipelines at NERSC</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rubin_pipelines/Working_with_NERSC_repos.html">Working with the butler repos at NERSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rubin_pipelines/Running_pipetasks.html">Running Rubin pipetasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rubin_pipelines/BPS_for_running_at_scale.html">Using BPS for running Rubin pipelines at scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rubin_pipelines/Writing_pipetasks_and_pipelines.html">Writing pipetasks and pipelines</a></li>
+</ul>
+</details></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/getting_started/managing_nersc_account.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Managing a NERSC Computing Account</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-nersc">Connecting to NERSC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manage-your-nersc-account-with-iris">Manage Your NERSC Account with Iris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-desc-read-permissions-on-your-home-or-scratch-directory">Set up DESC Read Permissions on your <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> or <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> Directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disk-space-and-backing-up-data">Disk Space and Backing up Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-data">Moving Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-time">Compute Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#need-help">Need Help?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="managing-a-nersc-computing-account">
+<span id="managing-nersc-account"></span><h1>Managing a NERSC Computing Account<a class="headerlink" href="#managing-a-nersc-computing-account" title="Link to this heading">#</a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#connecting-to-nersc" id="id8">Connecting to NERSC</a></p></li>
+<li><p><a class="reference internal" href="#manage-your-nersc-account-with-iris" id="id9">Manage Your NERSC Account with Iris</a></p></li>
+<li><p><a class="reference internal" href="#set-up-desc-read-permissions-on-your-home-or-scratch-directory" id="id10">Set up DESC Read Permissions on your <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> or <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> Directory</a></p></li>
+<li><p><a class="reference internal" href="#disk-space-and-backing-up-data" id="id11">Disk Space and Backing up Data</a></p></li>
+<li><p><a class="reference internal" href="#moving-data" id="id12">Moving Data</a></p></li>
+<li><p><a class="reference internal" href="#compute-time" id="id13">Compute Time</a></p></li>
+<li><p><a class="reference internal" href="#need-help" id="id14">Need Help?</a></p></li>
+</ul>
+</nav>
+<section id="connecting-to-nersc">
+<span id="id1"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">Connecting to NERSC</a><a class="headerlink" href="#connecting-to-nersc" title="Link to this heading">#</a></h2>
+<p>NERSC requires the use of Multi-Factor Authentication (MFA) to log in to NERSC
+machines, websites, and services. This means you will provide your NERSC
+password + One Time Password (OTP), which is obtained from an app like
+Google Authenticator or Authy.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.nersc.gov/connect/mfa/">Instructions to set up MFA</a></p></li>
+<li><p><a class="reference external" href="https://docs.nersc.gov/connect/mfa/#sshproxy">sshproxy</a> allows a user to
+log in once every 24 hours, enabling you to avoid supplying the NERSC
+password + OTP for every login.</p></li>
+<li><p>NERSC provides a <a class="reference external" href="https://www.youtube.com/&#64;NERSCtv">YouTube playlist</a>
+demonstrating how to connect.</p></li>
+</ul>
+<p><strong>Users are strongly encouraged to use</strong>
+<a class="reference external" href="https://docs.nersc.gov/connect/thinlinc/">ThinLinc</a> <strong>to connect to NERSC.</strong>
+This service provides enhanced speed and the ability to reconnect to a session
+even from a different location or computer.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Make sure to set up a backup method of authentication using a desktop app
+or another phone.</p>
+</div>
+<p>Example login for username “elvis”:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">myhost% ssh -Y elvis@perlmutter.nersc.gov</span>
+</pre></div>
+</div>
+</section>
+<section id="manage-your-nersc-account-with-iris">
+<span id="iris"></span><h2><a class="toc-backref" href="#id9" role="doc-backlink">Manage Your NERSC Account with Iris</a><a class="headerlink" href="#manage-your-nersc-account-with-iris" title="Link to this heading">#</a></h2>
+<p>You can use <a class="reference external" href="https://iris.nersc.gov">Iris</a> to update your password, recover a
+lost password or username, update your MFA tokens, check your usage, update
+your default shell, as well as many other account-related activities:
+<a class="reference external" href="https://docs.nersc.gov/iris/iris-for-users/">https://docs.nersc.gov/iris/iris-for-users/</a></p>
+<p>Iris provides access to a number of utilities such as:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://iris.nersc.gov">Data Dashboard</a>, which allows you to check on
+your disk use across the various NERSC file systems</p></li>
+<li><p><a class="reference external" href="https://my.nersc.gov/queues.php">Queue status</a></p></li>
+<li><p><a class="reference external" href="https://www.nersc.gov/live-status/motd/">Center status</a></p></li>
+</ul>
+</section>
+<section id="set-up-desc-read-permissions-on-your-home-or-scratch-directory">
+<span id="desc-read-permissions"></span><h2><a class="toc-backref" href="#id10" role="doc-backlink">Set up DESC Read Permissions on your <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> or <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> Directory</a><a class="headerlink" href="#set-up-desc-read-permissions-on-your-home-or-scratch-directory" title="Link to this heading">#</a></h2>
+<p>DESC members may use their <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> directory to store files meant to be
+shared with our collaborators. To facilitate file sharing, users can do the
+following to create a dedicated <code class="docutils literal notranslate"><span class="pre">$HOME/desc</span></code> subdirectory allowing read
+access to all DESC members:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setfacl<span class="w"> </span>-m<span class="w"> </span>g:lsst:x<span class="w"> </span><span class="nv">$HOME</span>
+mkdir<span class="w"> </span><span class="nv">$HOME</span>/desc
+chgrp<span class="w"> </span>lsst<span class="w"> </span><span class="nv">$HOME</span>/desc
+chmod<span class="w"> </span>g+s<span class="w"> </span><span class="nv">$HOME</span>/desc
+</pre></div>
+</div>
+<p>This could also be done within a user’s area on <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code>. Additional tips
+are available from the
+<a class="reference external" href="https://docs.nersc.gov/filesystems/unix-file-permissions/">NERSC documentation</a>.</p>
+</section>
+<section id="disk-space-and-backing-up-data">
+<span id="disk-space"></span><h2><a class="toc-backref" href="#id11" role="doc-backlink">Disk Space and Backing up Data</a><a class="headerlink" href="#disk-space-and-backing-up-data" title="Link to this heading">#</a></h2>
+<p>All NERSC users have 40 GB of space in their
+<a class="reference external" href="https://docs.nersc.gov/filesystems/perlmutter-scratch/">$HOME</a>.</p>
+<p>All NERSC users in the LSST DESC repo have access to the shared LSST DESC
+<a class="reference external" href="https://docs.nersc.gov/filesystems/community/">Community File Space (CFS)</a>
+at <code class="docutils literal notranslate"><span class="pre">/global/cfs/cdirs/lsst/</span></code>. Please be mindful that we do not have an
+infinite allocation of disk space, or of inodes (the number of files, etc.).
+You can keep track of usage of the project allocation in the
+<a class="reference external" href="https://iris.nersc.gov">Data Dashboard</a> (NERSC login required).</p>
+<p>Users also have an allocated scratch quota, accessible with <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code>. The
+quota is currently 20 TB / 10 million inodes, and files unused for longer than
+8 weeks will be purged. We advise you to make full use of <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> and keep
+files on CFS only when they need to be shared within the group. In particular,
+the <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> space is <em>very</em> fast, and far outperforms CFS and home
+directories.</p>
+<p>In addition, we advise all users to regularly back up their data to
+<a class="reference external" href="https://docs.nersc.gov/filesystems/archive/">HPSS</a>, the NERSC tape storage
+system. It is <strong>VERY</strong> important to avoid sending large numbers of small
+(&lt;1 MB) files to HPSS, as this will <strong>significantly</strong> degrade the tape
+performance and will take forever for you to back up your files. Please use
+<a class="reference external" href="https://docs.nersc.gov/filesystems/archive/#htar-creating-archive-files-in-hpss">htar</a>
+to back up small files!</p>
+<p>More details about all <a class="reference external" href="https://docs.nersc.gov/filesystems/">Storage Assets at NERSC</a>.</p>
+<p>Simplified NERSC file systems (fastest and smallest at the top, largest and
+slowest at the bottom):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 25.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tier</p></th>
+<th class="head"><p>Size</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Scratch</p></td>
+<td><p>36 PB SSD</p></td>
+<td><p>Perlmutter Scratch: Lustre, 6 TB/s, temporary (purged)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Community</p></td>
+<td><p>114 PB HDD</p></td>
+<td><p>Spectrum Scale (GPFS), 150 GB/s, permanent</p></td>
+</tr>
+<tr class="row-even"><td><p>HPSS</p></td>
+<td><p>315 PB tape</p></td>
+<td><p>HPSS Archive: long term</p></td>
+</tr>
+<tr class="row-odd"><td><p>Global Common</p></td>
+<td><p>20 TB SSD</p></td>
+<td><p>Global Common Software: Spectrum Scale, permanent; faster
+compiling / source code</p></td>
+</tr>
+<tr class="row-even"><td><p>Global Home</p></td>
+<td><p>–</p></td>
+<td><p>Home directories</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>See <a class="reference external" href="https://docs.nersc.gov/filesystems/">https://docs.nersc.gov/filesystems/</a> for details.</p>
+</section>
+<section id="moving-data">
+<span id="id4"></span><h2><a class="toc-backref" href="#id12" role="doc-backlink">Moving Data</a><a class="headerlink" href="#moving-data" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://docs.nersc.gov/services/globus/">Globus can be used to transfer files</a>
+to and from NERSC, as well as transfer files between NERSC directories and
+file systems.</p>
+</section>
+<section id="compute-time">
+<span id="id5"></span><h2><a class="toc-backref" href="#id13" role="doc-backlink">Compute Time</a><a class="headerlink" href="#compute-time" title="Link to this heading">#</a></h2>
+<p>The LSST DESC repo has an allocation of compute time at NERSC. Every LSST DESC
+user is granted 300 CPU node hours and 200 GPU hours per allocation year. If
+you exhaust your computing time, you can apply for more.</p>
+<p>You can see how the LSST DESC allocation is being used overall, as well as your
+own individual use of computing time, in <a class="reference external" href="https://iris.nersc.gov">Iris</a>.
+Please be considerate of your usage of this shared compute time.</p>
+<p>You can get a wealth of information about NERSC accounting from Slurm at the
+command line. For example, to find all the jobs that used the <code class="docutils literal notranslate"><span class="pre">m1727</span></code> repo
+during the month of December:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sacct<span class="w"> </span>-A<span class="w"> </span>m1727<span class="w"> </span>-a<span class="w"> </span>-S<span class="w"> </span><span class="m">12</span>/01/16<span class="w"> </span>-E<span class="w"> </span><span class="m">12</span>/31/16<span class="w"> </span>-o<span class="w"> </span>jobname,user,partition,qos,nnodes,ncpus,elapsed<span class="w"> </span>-X<span class="w"> </span>--parsable
+</pre></div>
+</div>
+</section>
+<section id="need-help">
+<span id="id7"></span><h2><a class="toc-backref" href="#id14" role="doc-backlink">Need Help?</a><a class="headerlink" href="#need-help" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>You can reach out to the <code class="docutils literal notranslate"><span class="pre">#desc-nersc</span></code> Slack channel to ask questions.</p></li>
+<li><p>There is a <a class="reference external" href="https://www.nersc.gov/users/getting-help/slack/">NERSC User Slack Workspace</a>
+you can join, which includes a number of channels including <code class="docutils literal notranslate"><span class="pre">#general</span></code>.</p></li>
+<li><p>You can also open a NERSC ticket to address detailed problems or issues. You
+can view all tickets, past and present, and submit new tickets via the
+<a class="reference external" href="https://help.nersc.gov">NERSC Help Portal</a>.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Submitting a ticket to NERSC</strong></p>
+<p>When creating or editing an existing ticket, you can choose to share the
+ticket with all the members of the LSST repository. To do this, under
+“Share With NERSC Projects”, add <em>m1727</em> if it isn’t already there.</p>
+<ul class="simple">
+<li><p>Log in using your NERSC credentials.</p></li>
+<li><p>While creating a new ticket, make sure to click on “Share With NERSC
+Projects” and add <code class="docutils literal notranslate"><span class="pre">m1727</span></code>. This allows other LSST members to view the
+ticket.</p></li>
+<li><p>If there are specific people you would like to share the ticket with, add
+them under “Share with NERSC Users”.</p>
+<ul>
+<li><p>Add specific NERSC users either by supplying their user name or by
+searching via last name, first name.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LSSTDESC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, LSSTDESC.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
