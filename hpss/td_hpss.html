@@ -1,0 +1,716 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Time Domain WG HPSS Area &#8212; LSSTDESC NERSC Docs 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=2ac403f5" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hpss/td_hpss';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/js/toggle_sidebar.js?v=cb1c5278"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="DESC HPSS Project Area" href="desc_hpss.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/desc_logo.png" class="logo__image only-light" alt="LSSTDESC NERSC Docs 0.1.0 documentation - Home"/>
+    <img src="../_static/desc_logo.png" class="logo__image only-dark pst-js-only" alt="LSSTDESC NERSC Docs 0.1.0 documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../getting_started/index.html">Getting Started at NERSC</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/nersc_account.html">Getting a NERSC Computing Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/nersc_data_storage.html">Where to Store Your Data at NERSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/nersc_collaboration_accounts.html">NERSC Collaboration Accounts</a></li>
+</ul>
+</details></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rubin_pipelines/index.html">Running Rubin Pipelines at NERSC</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rubin_pipelines/Working_with_NERSC_repos.html">Working with the butler repos at NERSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rubin_pipelines/Running_pipetasks.html">Running Rubin pipetasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rubin_pipelines/BPS_for_running_at_scale.html">Using BPS for running Rubin pipelines at scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rubin_pipelines/Writing_pipetasks_and_pipelines.html">Writing pipetasks and pipelines</a></li>
+</ul>
+</details></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">HPSS Tape Archive</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hpss_intro.html">Introduction to HPSS at NERSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desc_hpss.html">DESC HPSS Project Area</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Time Domain WG HPSS Area</a></li>
+</ul>
+</details></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/hpss/td_hpss.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Time Domain WG HPSS Area</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-the-desc-hpss-td-directory">Writing to the DESC HPSS TD Directory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-desctd-collaboration-account">Using the <code class="docutils literal notranslate"><span class="pre">desctd</span></code> Collaboration Account</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-nersc-as-desctd">Connecting to NERSC as <code class="docutils literal notranslate"><span class="pre">desctd</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grant-the-desctd-account-read-access-to-your-files">Grant the <code class="docutils literal notranslate"><span class="pre">desctd</span></code> Account Read Access to Your Files</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-where-you-will-copy-your-data-on-hpss">Determine Where You Will Copy Your Data on HPSS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-job-scripts-to-write-data-to-hpss">Example Job Scripts to Write Data to HPSS</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-a-full-directory-and-create-a-tarball">Copy a Full Directory and Create a Tarball</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-a-list-of-files-and-create-a-tarball">Copy a List of Files and Create a Tarball</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-have-paths-154-characters-or-filenames-99-characters">If You Have Paths &gt; 154 Characters or Filenames &gt; 99 Characters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-data-from-the-desc-hpss-td-directory">Copying Data from the DESC HPSS TD Directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-data-already-stored-in-desc-hpss-td">Updating Data Already Stored in DESC HPSS TD</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="time-domain-wg-hpss-area">
+<h1>Time Domain WG HPSS Area<a class="headerlink" href="#time-domain-wg-hpss-area" title="Link to this heading">#</a></h1>
+<p>The Time Domain (TD) Working Group has a dedicated area in the shared DESC HPSS
+directory. This page outlines how to write data to and retrieve data from this
+area.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DESC HPSS TD directory: <code class="docutils literal notranslate"><span class="pre">/home/projects/desc/td/projects</span></code></p>
+</div>
+<section id="writing-to-the-desc-hpss-td-directory">
+<h2>Writing to the DESC HPSS TD Directory<a class="headerlink" href="#writing-to-the-desc-hpss-td-directory" title="Link to this heading">#</a></h2>
+<section id="using-the-desctd-collaboration-account">
+<h3>Using the <code class="docutils literal notranslate"><span class="pre">desctd</span></code> Collaboration Account<a class="headerlink" href="#using-the-desctd-collaboration-account" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">desctd</span></code> collaboration account manages write access to the TD HPSS area.
+When writing data into HPSS, you need to log in as the <code class="docutils literal notranslate"><span class="pre">desctd</span></code> user. See
+<a class="reference internal" href="../getting_started/nersc_collaboration_accounts.html"><span class="doc">NERSC Collaboration Accounts</span></a> for general information
+about collaboration accounts.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using this account requires that you are in the <code class="docutils literal notranslate"><span class="pre">desctd</span></code> Unix group at
+NERSC. If you are not sure whether you are in the <code class="docutils literal notranslate"><span class="pre">desctd</span></code> group, send a
+Slack message on the
+<a class="reference external" href="https://lsstc.slack.com/messages/C2U2K05JR">#desc-nersc</a> channel or email
+lsst-desc-ops-mgmt at slac.stanford.edu.</p>
+</div>
+<section id="connecting-to-nersc-as-desctd">
+<h4>Connecting to NERSC as <code class="docutils literal notranslate"><span class="pre">desctd</span></code><a class="headerlink" href="#connecting-to-nersc-as-desctd" title="Link to this heading">#</a></h4>
+<p><strong>One-time setup on your local (non-NERSC) machine:</strong></p>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://docs.nersc.gov/connect/mfa/#sshproxy">sshproxy.sh</a>, if you
+have not already</p></li>
+<li><p>Add the directory where <code class="docutils literal notranslate"><span class="pre">sshproxy.sh</span></code> is installed to your <code class="docutils literal notranslate"><span class="pre">$PATH</span></code></p></li>
+<li><p>Edit your <code class="docutils literal notranslate"><span class="pre">$HOME/.ssh/config</span></code> and add:</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Host desctd-pm
+  Hostname perlmutter.nersc.gov
+  User desctd
+  IdentityFile ~/.ssh/desctd
+  IdentitiesOnly yes
+  ForwardAgent yes
+</pre></div>
+</div>
+<p><strong>After the one-time setup</strong>, whenever you wish to connect as the <code class="docutils literal notranslate"><span class="pre">desctd</span></code>
+user:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sshproxy.sh<span class="w"> </span>-u<span class="w"> </span>&lt;yourusername&gt;<span class="w"> </span>-c<span class="w"> </span>desctd
+ssh<span class="w"> </span>desctd-pm
+</pre></div>
+</div>
+</section>
+<section id="grant-the-desctd-account-read-access-to-your-files">
+<h4>Grant the <code class="docutils literal notranslate"><span class="pre">desctd</span></code> Account Read Access to Your Files<a class="headerlink" href="#grant-the-desctd-account-read-access-to-your-files" title="Link to this heading">#</a></h4>
+<p>Any files you copy into HPSS must have permissions that allow the <code class="docutils literal notranslate"><span class="pre">desctd</span></code>
+account read access.</p>
+<ul class="simple">
+<li><p>If your files are on the Community File Space (<code class="docutils literal notranslate"><span class="pre">/global/cfs/cdirs/lsst</span></code>),
+ask on the <code class="docutils literal notranslate"><span class="pre">#desc-nersc</span></code> Slack channel for the permissions on your files to
+be set for copying into HPSS.</p></li>
+<li><p>If your files are on <code class="docutils literal notranslate"><span class="pre">$PSCRATCH</span></code> or <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>, set up a batch job that sets
+the permissions:</p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">set-permissions.sh</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash -l</span>
+<span class="c1">#SBATCH -q xfer</span>
+<span class="c1">#SBATCH -t 10:00:00</span>
+<span class="c1">#SBATCH -J myjob</span>
+<span class="c1">#SBATCH -L SCRATCH</span>
+<span class="c1">#SBATCH --mem=10GB</span>
+
+setfacl<span class="w"> </span>-m<span class="s2">"group:lsst:x"</span><span class="w"> </span><span class="nv">$PSCRATCH</span>
+chgrp<span class="w"> </span>-R<span class="w"> </span>lsst<span class="w"> </span><span class="nv">$PSCRATCH</span>
+chmod<span class="w"> </span>-R<span class="w"> </span>g+rX<span class="w"> </span><span class="nv">$PSCRATCH</span>/&lt;path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>directory<span class="w"> </span>you<span class="w"> </span>wish<span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>to<span class="w"> </span>HPSS&gt;
+</pre></div>
+</div>
+</div>
+<p>Submit the batch job with <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">set-permissions.sh</span></code>. Once the job completes
+without errors, any DESC NERSC user has read access to your directory.</p>
+</section>
+</section>
+<section id="determine-where-you-will-copy-your-data-on-hpss">
+<h3>Determine Where You Will Copy Your Data on HPSS<a class="headerlink" href="#determine-where-you-will-copy-your-data-on-hpss" title="Link to this heading">#</a></h3>
+<p>If the data is associated with a DESC Project, store it in
+<code class="docutils literal notranslate"><span class="pre">/home/projects/desc/td/projects</span></code>.</p>
+<ol class="arabic">
+<li><p>Log into Perlmutter as <code class="docutils literal notranslate"><span class="pre">desctd</span></code>: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">desctd-pm</span></code></p></li>
+<li><p>Start <code class="docutils literal notranslate"><span class="pre">hsi</span></code> to access HPSS and create a new project subdirectory, using the
+DESC Project number found in
+<a class="reference external" href="https://portal.lsst-desc.org/DESCPub/app/">PubDB</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hsi
+<span class="nb">cd</span><span class="w"> </span>/home/projects/desc/td/projects
+mkdir<span class="w"> </span>Projnnn_&lt;shortIdentifiableName&gt;
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="example-job-scripts-to-write-data-to-hpss">
+<h3>Example Job Scripts to Write Data to HPSS<a class="headerlink" href="#example-job-scripts-to-write-data-to-hpss" title="Link to this heading">#</a></h3>
+<p>Once your directory is ready, you can start copying data into HPSS.</p>
+<ol class="arabic simple">
+<li><p>Log into Perlmutter as <code class="docutils literal notranslate"><span class="pre">desctd</span></code>: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">desctd-pm</span></code></p></li>
+<li><p>Create a batch script to copy the files. Start from one of the examples in
+<code class="docutils literal notranslate"><span class="pre">/global/cfs/cdirs/lsst/groups/TD/BACKUPS</span></code> and save your script in that
+directory, so there is a record of what has been copied to HPSS.</p></li>
+</ol>
+<p>There are two <code class="docutils literal notranslate"><span class="pre">htar</span></code> options, unless you are dealing with a very large amount
+of data (&gt; 2 TB) or have file names or paths that exceed
+<a class="reference external" href="https://docs.nersc.gov/filesystems/archive/#htar-limitations">htar’s limitations</a>. If
+you have long paths or file names, see
+<a class="reference internal" href="#td-hpss-long-paths"><span class="std std-ref">If You Have Paths &gt; 154 Characters or Filenames &gt; 99 Characters</span></a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>NERSC recommends <code class="docutils literal notranslate"><span class="pre">htar</span></code> aggregate sizes between 100 GB and 2 TB. Individual
+files within an <code class="docutils literal notranslate"><span class="pre">htar</span></code> aggregate are limited to approximately 68 GB. To
+work around these limits, create the tarball ahead of time and copy it into
+HPSS with <code class="docutils literal notranslate"><span class="pre">hsi</span> <span class="pre">put</span></code>. See also NERSC’s guidance to
+<a class="reference external" href="https://docs.nersc.gov/filesystems/HPSS-best-practices/#avoid-very-large-files">avoid very large files</a>.</p>
+</div>
+<section id="copy-a-full-directory-and-create-a-tarball">
+<h4>Copy a Full Directory and Create a Tarball<a class="headerlink" href="#copy-a-full-directory-and-create-a-tarball" title="Link to this heading">#</a></h4>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Copy a directory into HPSS</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash -l</span>
+<span class="c1">#SBATCH -q xfer</span>
+<span class="c1">#SBATCH -t 10:00:00</span>
+<span class="c1">#SBATCH -J myjob</span>
+<span class="c1">#SBATCH -L SCRATCH</span>
+<span class="c1">#SBATCH --mem=10GB</span>
+
+<span class="c1">## Adjust the SBATCH -t based on how much data you are writing</span>
+<span class="c1">## It is likely better to over-estimate than to risk running out of time</span>
+
+<span class="c1">## cd into the location of your data directory</span>
+<span class="nb">cd</span><span class="w"> </span>/pscratch/sd/&lt;firstLetterOfYourUsername&gt;/&lt;username&gt;
+
+<span class="c1">## Write this directory into HPSS and create a tarball.</span>
+<span class="c1">## The htar file preserves the directory structure given in &lt;mydirectory&gt;;</span>
+<span class="c1">## if you supply the full path, it will be reflected in the resulting tarball.</span>
+<span class="c1">## -Hcrc generates checksums</span>
+htar<span class="w"> </span>-Hcrc<span class="w"> </span>-cvf<span class="w"> </span>/home/projects/desc/td/projects/Projnnn_&lt;shortIdentifiableName&gt;/&lt;mydirectory&gt;.tar<span class="w"> </span>&lt;mydirectory&gt;
+</pre></div>
+</div>
+</div>
+</section>
+<section id="copy-a-list-of-files-and-create-a-tarball">
+<h4>Copy a List of Files and Create a Tarball<a class="headerlink" href="#copy-a-list-of-files-and-create-a-tarball" title="Link to this heading">#</a></h4>
+<p>Create a text file listing one file or directory per line. The paths given in
+the text file are the paths used in the tarball.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Copy a list of files into HPSS</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash -l</span>
+<span class="c1">#SBATCH -q xfer</span>
+<span class="c1">#SBATCH -t 10:00:00</span>
+<span class="c1">#SBATCH -J myjob</span>
+<span class="c1">#SBATCH -L SCRATCH</span>
+<span class="c1">#SBATCH --mem=10GB</span>
+
+<span class="c1">## Adjust the SBATCH -t based on how much data you are writing</span>
+<span class="c1">## It is likely better to over-estimate than to risk running out of time</span>
+
+<span class="c1">## cd into the location of your list of files</span>
+<span class="nb">cd</span><span class="w"> </span>/pscratch/sd/&lt;firstLetterOfYourUsername&gt;/&lt;username&gt;
+
+<span class="c1">## Write this list of files into HPSS and create a tarball.</span>
+<span class="c1">## -Hcrc generates checksums</span>
+htar<span class="w"> </span>-Hcrc<span class="w"> </span>-cvf<span class="w"> </span>/home/projects/desc/td/projects/Projnnn_&lt;shortIdentifiableName&gt;/&lt;mydirectory&gt;.tar<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-L<span class="w"> </span>/pscratch/sd/&lt;firstLetterOfYourUsername&gt;/&lt;username&gt;/myListofFilesAndDirectories.txt
+</pre></div>
+</div>
+</div>
+</section>
+<section id="if-you-have-paths-154-characters-or-filenames-99-characters">
+<span id="td-hpss-long-paths"></span><h4>If You Have Paths &gt; 154 Characters or Filenames &gt; 99 Characters<a class="headerlink" href="#if-you-have-paths-154-characters-or-filenames-99-characters" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">htar</span></code> cannot handle paths longer than 154 characters or file names longer
+than 99 characters. In that case (or for very large areas), use <code class="docutils literal notranslate"><span class="pre">tar</span></code> to
+create an archive and then copy it into HPSS using <code class="docutils literal notranslate"><span class="pre">hsi</span> <span class="pre">put</span></code>.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Create a tarball with tar and copy it with hsi put</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash -l</span>
+<span class="c1">#SBATCH -q xfer</span>
+<span class="c1">#SBATCH -t 24:00:00</span>
+<span class="c1">#SBATCH -J myjob</span>
+<span class="c1">#SBATCH -L SCRATCH</span>
+<span class="c1">#SBATCH --mem=10GB</span>
+
+<span class="c1">## Adjust the SBATCH -t based on how much data you are writing</span>
+<span class="c1">## It is likely better to over-estimate than to risk running out of time</span>
+
+<span class="nb">cd</span><span class="w"> </span>/pscratch/sd/&lt;firstLetterOfYourUsername&gt;/&lt;username&gt;
+
+<span class="c1">## Create the tarball</span>
+tar<span class="w"> </span>--owner<span class="o">=</span>desctd<span class="w"> </span>-c<span class="w"> </span>-z<span class="w"> </span>-C<span class="w"> </span>&lt;PathToDataDirectoryToTarball&gt;<span class="w"> </span>-f<span class="w"> </span><span class="nv">$PSCRATCH</span>/&lt;myDirectory&gt;.tar.gz<span class="w"> </span>&lt;myDirectory&gt;
+
+<span class="c1">## Copy the tarball into HPSS</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$PSCRATCH</span>
+hsi<span class="w"> </span><span class="s2">"cd /home/projects/desc/td/projects/Projnnn_&lt;shortIdentifiableName&gt;; put &lt;myDirectory&gt;.tar.gz"</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="copying-data-from-the-desc-hpss-td-directory">
+<span id="td-hpss-copying"></span><h2>Copying Data from the DESC HPSS TD Directory<a class="headerlink" href="#copying-data-from-the-desc-hpss-td-directory" title="Link to this heading">#</a></h2>
+<p>Any DESC NERSC user can read the data in the DESC HPSS TD area and copy it to
+another machine or to another filesystem at NERSC.</p>
+<p>A <a class="reference external" href="https://portal.nersc.gov/cfs/lsst/DESC_TD_PUBLIC/BACKUPS/AAA_README.TXT">list of TD data stored on NERSC HPSS</a> is
+available.</p>
+<p>The recommended method is <a class="reference external" href="https://www.globus.org">Globus</a>; see
+<a class="reference internal" href="desc_hpss.html#globus-hpss"><span class="std std-ref">Using Globus to Access the DESC HPSS Project Area</span></a> (or the <a class="reference external" href="https://confluence.slac.stanford.edu/spaces/LSSTDESC/pages/248420806/NERSC+HPSS#NERSCHPSS-UsingGlobustoaccesstheDESCHPSSprojectarea(alternativelytherearecommandlinetools)">Confluence instructions</a>)
+for step-by-step instructions. Use the <strong>NERSC HPSS</strong> Globus collection with the path
+<code class="docutils literal notranslate"><span class="pre">/home/projects/desc/td/</span></code> to read the TD data. If copying the data to another
+area on Perlmutter, use the <strong>NERSC Perlmutter</strong> collection as the destination.</p>
+</section>
+<section id="updating-data-already-stored-in-desc-hpss-td">
+<h2>Updating Data Already Stored in DESC HPSS TD<a class="headerlink" href="#updating-data-already-stored-in-desc-hpss-td" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Copy the data you wish to update from HPSS (see <a class="reference internal" href="#td-hpss-copying"><span class="std std-ref">Copying Data from the DESC HPSS TD Directory</span></a>).</p></li>
+<li><p>Create an updated directory with the data.</p></li>
+<li><p>Write the updated data into the DESC HPSS TD area (see
+<a class="reference internal" href="#writing-to-the-desc-hpss-td-directory">Writing to the DESC HPSS TD Directory</a>). You cannot overwrite existing
+data in HPSS.</p></li>
+<li><p>If desired, remove the old data with <code class="docutils literal notranslate"><span class="pre">hsi</span></code>, or rename your new file to the
+old file name.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Deleted files on HPSS <strong>cannot be recovered</strong>.</p>
+</div>
+<p>To remove a file or directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hsi<span class="w"> </span>rm<span class="w"> </span>/path/to/my_hpss_file
+hsi<span class="w"> </span>rm<span class="w"> </span>-R<span class="w"> </span>/path/to/my_hpss_directory
+</pre></div>
+</div>
+<p>To rename a file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hsi<span class="w"> </span>mv<span class="w"> </span>/path/to/my_hpss_file_original_name<span class="w"> </span>/path/to/my_hpss_file_new_name
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="desc_hpss.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">DESC HPSS Project Area</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LSSTDESC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, LSSTDESC.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
