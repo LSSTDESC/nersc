@@ -195,10 +195,8 @@ HPSS Tape Archive
 Used to store files for backup and to protect your data. This is a great way to
 protect your files and recover from purging on Perlmutter SCRATCH.
 
-- DESC's HPSS AY23 allocation is **2.4 PB**
-- Individual users have a **75 TB** quota from DESC on HPSS for AY23
 - Use the tools ``htar`` and ``hsi`` to copy into HPSS
-- Details and examples available on Confluence
+- Details and examples are in :doc:`../hpss/index`
 - The recommended ``xfer`` queue is free of charge
 
 .. tip::

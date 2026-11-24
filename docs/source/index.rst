@@ -7,6 +7,7 @@ Welcome to LSSTDESC's NERSC Documentation
 
    getting_started/index
    rubin_pipelines/index
+   hpss/index
 
 Indices and tables
 ==================
